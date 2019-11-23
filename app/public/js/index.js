@@ -18,27 +18,27 @@ $(document).ready(function () {
         console.log(state);
         console.log(limit);
         // create loading gif and push onto page
-        // var loader = $("<div>");
-        // loader.attr("id", "loader");
-        // loader.html("<h3>Get excited parks are on the way!</h3>")
-        // loader.append("<img src=https://giphy.com/gifs/5tfqO7ClftEsoa6J7h>");
-        // $("#loader").html(loader);
+        var loader = $("<div>");
+        loader.attr("id", "loader");
+        loader.html("<h3>Get excited parks are on the way!</h3>")
+        loader.append("<img src=https://giphy.com/gifs/5tfqO7ClftEsoa6J7h>");
+        $("#loader").html(loader);
 
         // call functions
         getParks()
     })
 
-    // $(document).ajaxStart(function () {
-    //     // Show image container
-    //     $("#row1").hide();
-    //     $("#row2").hide();
-    //     $("#loader").show();
-    //     setTimeout(function () {
-    //         $("#loader").hide();
-    //         $("#row1").show();
-    //         $("#row2").show();
-    //     }, 3000);
-    // });
+    $(document).ajaxStart(function () {
+        // Show image container
+        $("#row1").hide();
+        $("#row2").hide();
+        $("#loader").show();
+        setTimeout(function () {
+            $("#loader").hide();
+            $("#row1").show();
+            $("#row2").show();
+        }, 3000);
+    });
 
     function getParks() {
         var queryURLParks = "https://developer.nps.gov/api/v1/parks?&stateCode=" + state + "&limit=" + limit + "&api_key=" + parkAPIKey;
