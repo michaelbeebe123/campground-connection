@@ -54,7 +54,7 @@
   <form>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Select State</label>
-      <select class="form-group col-md-3" id="inputState">
+      <select class="form-group col-md-2" id="inputState">
         <option>AL</option>
         <option>AK</option>
         <option>AZ</option>
@@ -106,7 +106,7 @@
         <option>WI</option>
         <option>WY</option>
       </select>
-      <select class="form-group col-md-3" id="limitNumber">
+      <select class="form-group col-md-2" id="limitNumber">
         <option>5</option>
         <option>10</option>
         <option>15</option>
@@ -116,13 +116,19 @@
       </button>
     </div>
   </form>
-</div>
-<div class="col-sm">View Your Trip</div>
-</div>
-  <!--Card displays of search results (park name, price range, rating, photo)-->
-  <div class="row" id="resultcards">
+  <div class="row" id="resultcards"><!--Card displays of search results (park name, price range, rating, photo)-->
     These will be dynamically created cards of search results
   </div>
+</div>
+ <div class="col-sm tripbar"><div id="tripview">View Your Trips
+        <select class="form-group col-sm-4 mb-2">
+        <option>DYNAMICALLY CREATE OPTIONS</option>
+        </select>
+    </div></div>
+</div>
+  
+  
+ 
 </body>
 
 </html>

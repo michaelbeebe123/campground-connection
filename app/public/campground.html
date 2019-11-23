@@ -1,63 +1,91 @@
-<!--Single Park Display-->
+<!--Single campground Display-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Campground</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Campground Connection</title>
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link href=“https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap” rel=“stylesheet”>
+    <link rel="stylesheet" href="stylesheets/style.css" />
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link href="stylesheets/style.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="js/index.js"></script>
 </head>
+
 <body>
-    <!--Logo/main button--><!--Login/username input (takes you to login with an autofill?)--><!--Sign In--><!--Sign Up-->
-    <div class="container">
-            <div class="row">
-                <form class="form-inline">
-                    <div class="form-group mb-2" id="logo">
-                        <a href="/index">Campground Connection</a>
-                    </div>
+    <div class="jumbotron" id="jumbo">
+        <h1 id="titleHeader" class="display-4">
+            <button id="logo">
+                <a href="/index">Campground Connection</a>
+            </button>
+        </h1>
+        <hr class="my-4" />
+        <p class=log>
+            <form class="form-inline">
                 <div class="form-group mx-sm-3 mb-2">
                     <input type="email" class="form-control" id="emailinput" placeholder="Email">
-                 </div>
+                </div>
                 <button><a href="/login">Log In</a></button>
                 <button><a href="/signup">Sign Up</a></button>
-                </form>
-            </div>
-    <!--Park Name--><!--State--><!--View Your Trips-->
-    <div class="row">
-        <div id="campname">Campground Name, Park Name, State</div>
-        <div id="tripview">(dropdown) View Your Trips
-            <select class="form-control form-control-sm">
-            <option>DYNAMICALLY CREATE OPTIOSN</option>
-            </select>
-        </div>
+            </form>
+        </p>
     </div>
-    <!--Hours-->
-    <div class="row" id="hours">Hours</div>
-    <!--Prices-->
-    <div class="row" id="pricing">Prices</div>
-    <!--Rating-->
-    <div class="row" id="rating">Rating</div>
-    <!--Photo-->
-    <div class="row" id="photo">Photo</div>
-    <!--Amenities/Accesibility Info-->
-    <div class="row" id="access">Amenities/Accesibility Info</div>
-    <!--Save this campground--><!--Trip Option-->
-    <div class="row"><button id="campsave">Save This Campground</button>
-        <div id="tripview">(dropdown) Trip Options
-            <select class="form-control form-control-sm">
-            <option>DYNAMICALLY CREATE OPTIONS</option>
-            </select>
-        </div></div>
-    <!--Reviews?-->
-    <div class="row" id="reviews">Reviews?</div>
+
+
+    <!--Search Park-->
+    <!--Requirements(park or campground, state)-->
+    <!--View Your Trips list of trip names if logged in-->
+    <div class="container">
+
+        <div class="row results">
+
+            <div class="col-lg">
+                <!--Park Name-->
+                <!--State-->
+                <div class="row" id="campname">Campground Name, Park Name, State</div>
+                <!--Hours-->
+                <div class="row" id="hours">Hours</div>
+                <!--Prices-->
+                <div class="row" id="pricing">Prices</div>
+                <!--Rating-->
+                <div class="row" id="rating">Rating</div>
+                <!--Photo-->
+                <div class="row" id="photo">Photo</div>
+                <!--Amenities/Accesibility Info-->
+                <div class="row" id="access">Amenities/Accesibility Info</div>
+                <!--Save this campground-->
+                <!--Trip Option-->
+                <div class="row"><button id="campsave">Save This Campground</button>
+                    <div id="tripview">(dropdown) Trip Options
+                        <select class="form-control form-control-sm">
+                            <option>DYNAMICALLY CREATE OPTIONS</option>
+                        </select>
+                    </div>
+                </div>
+                <!--Reviews?-->
+                <div class="row" id="reviews">Reviews?</div>
+            </div>
+
+
+            <div class="col-sm tripbar">
+                <div id="tripview">View Your Trips
+                    <select class="form-group col-sm-4 mb-2">
+                        <option>DYNAMICALLY CREATE OPTIONS</option>
+                    </select>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>

@@ -11,6 +11,16 @@ body{
 a{color:darkgreen;
   text-decoration: none}
 
+#jumbo{
+    background-image: url(../images/mountain-pic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+}
+.log{
+  display: flex;             
+  align-items: flex-end;
+}
 
 h1 button{
   font-size: 100%;
@@ -25,12 +35,15 @@ h1 button a:hover{
   color:darkgreen;
 }
 
-.log{
-  display: flex;             
-  align-items: flex-end;
+
+
+.tripbar{
+  text-align:right;
 }
 
-
+.results{
+  text-align: center;
+}
 /*index
 -more search inputs?
 -view your trips
