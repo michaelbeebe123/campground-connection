@@ -2,3 +2,44 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+
+a{color:darkgreen;
+  text-decoration: none}
+
+
+h1 button{
+  font-size: 100%;
+  font-family:inherit;
+  border:0;
+  padding:0;
+  background-color:transparent;
+}
+
+h1 button a:hover{
+  text-decoration:none;
+  color:darkgreen;
+}
+
+.log{
+  display: flex;             
+  align-items: flex-end;
+}
+
+
+/*index
+-more search inputs?
+-view your trips
+-style card displays
+*/
+
+/*park*/
+/*campground*/
+/*trips*/
+/*members*/
+/*signup*/
+/*login*/
