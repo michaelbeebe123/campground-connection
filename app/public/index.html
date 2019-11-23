@@ -1,48 +1,132 @@
 <!--Main page, Park search-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Campground Connection</title>
 
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link href="stylesheets/style.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Campground Connection</title>
+  <!-- Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link href=“https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap” rel=“stylesheet”>
+  <link rel="stylesheet" href="stylesheets/index.css" />
+  <link rel="stylesheet" href="stylesheets/style.css" />
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="js/index.js"></script>
 </head>
+
 <body>
-    <!--Logo/main button--><!--Login/username input (takes you to login with an autofill?)--><!--Sign In--><!--Sign Up-->
-    <div class="container">
-    <div class="row main">
-        <form class="form-inline">
-            <div class="form-group mb-2" id="logo">
-                <a href="/index">Campground Connection</a>
-            </div>
-        <div class="form-group mx-sm-3 mb-2">
-            <input type="email" class="form-control" id="emailinput" placeholder="Email">
-         </div>
-        <button><a href="/login">Log In</a></button>
-        <button><a href="/signup">Sign Up</a></button>
-        </form>
-    </div>
-    <!--Search Park--><!--Requirements(park or campground, state)--><!--View Your Trips list of trip names if logged in-->
-    <div class="row">
-        <div>Search Park (Requirement forms will be here)</div>
-        <div>Search State Dropdown
-            <select class="form-control form-control-sm">
-            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
-            </select>
+  <div class="jumbotron" id="jumbo">
+    <h1 id="titleHeader" class="display-4">Campground Connection</h1>
+    <p class="lead">
+      This is a simple hero unit, a simple jumbotron-style component for
+      calling extra attention to featured content or information.
+    </p>
+    <hr class="my-4" />
+    <p>
+      It uses utility classes for typography and spacing to space content out
+      within the larger container.
+    </p>
+  </div>
+  <!--Logo/main button-->
+  <!--Login/username input (takes you to login with an autofill?)-->
+  <!--Sign In-->
+  <!--Sign Up-->
+  <div class="container">
+        <div class="row main">
+            <form class="form-inline">
+                <div class="form-group mb-2" id="logo">
+                    <a href="/index">Campground Connection</a>
+                </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="email" class="form-control" id="emailinput" placeholder="Email">
+             </div>
+            <button><a href="/login">Log In</a></button>
+            <button><a href="/signup">Sign Up</a></button>
+            </form>
         </div>
-        <div>Select Park or Campground</div>
-        <div>(Drop down) View Your Trips</div>
+  <!--Search Park-->
+  <!--Requirements(park or campground, state)-->
+  <!--View Your Trips list of trip names if logged in-->
+
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Select State</label>
+      <select class="form-group col-md-4" id="inputState">
+        <option>AL</option>
+        <option>AK</option>
+        <option>AZ</option>
+        <option>AR</option>
+        <option>CA</option>
+        <option>CO</option>
+        <option>CT</option>
+        <option>DE</option>
+        <option>FL</option>
+        <option>GA</option>
+        <option>HI</option>
+        <option>ID</option>
+        <option>IL</option>
+        <option>IN</option>
+        <option>IA</option>
+        <option>KS</option>
+        <option>KY</option>
+        <option>LA</option>
+        <option>ME</option>
+        <option>MD</option>
+        <option>MA</option>
+        <option>MI</option>
+        <option>MN</option>
+        <option>MS</option>
+        <option>MO</option>
+        <option>MT</option>
+        <option>NE</option>
+        <option>NV</option>
+        <option>NH</option>
+        <option>NJ</option>
+        <option>NM</option>
+        <option>NY</option>
+        <option>NC</option>
+        <option>ND</option>
+        <option>OH</option>
+        <option>OK</option>
+        <option>OR</option>
+        <option>PA</option>
+        <option>RI</option>
+        <option>SC</option>
+        <option>SD</option>
+        <option>TN</option>
+        <option>TX</option>
+        <option>UT</option>
+        <option>VT</option>
+        <option>VA</option>
+        <option>WA</option>
+        <option>WV</option>
+        <option>WI</option>
+        <option>WY</option>
+      </select>
+      <select class="form-group col-md-2" id="limitNumber">
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+      </select>
+      <button type="submit" class="btn btn-primary" id="submitBtn">
+        Submit
+      </button>
     </div>
-    <!--Card displays of search results (park name, price range, rating, photo)-->
-    <div class="row" id="resultcards">These will be dynamically created cards of search results</div>
-</div>
+  </form>
+  <!--Card displays of search results (park name, price range, rating, photo)-->
+  <div class="row" id="resultcards">
+    These will be dynamically created cards of search results
+  </div>
 </body>
+
 </html>
