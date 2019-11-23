@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link href=“https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap” rel=“stylesheet”>
+  <link rel="stylesheet" href="stylesheets/index.css" />
   <link rel="stylesheet" href="stylesheets/style.css" />
 
   <!-- jQuery library -->
@@ -48,15 +49,12 @@
   <!--Requirements(park or campground, state)-->
   <!--View Your Trips list of trip names if logged in-->
 <div class="container">
-    
-    <div class="row results">
-       
-    <div class="col-lg">
+    <div class="row"><div class="col-lg">
     <h1>Search the National Parks</h1>
   <form>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Select State</label>
-      <select class="form-group col-sm-2 mb-2" id="inputState">
+      <select class="form-group col-md-2" id="inputState">
         <option>AL</option>
         <option>AK</option>
         <option>AZ</option>
@@ -108,7 +106,7 @@
         <option>WI</option>
         <option>WY</option>
       </select>
-      <select class="form-group col-sm-2 mb-2" id="limitNumber">
+      <select class="form-group col-md-2" id="limitNumber">
         <option>5</option>
         <option>10</option>
         <option>15</option>
@@ -118,21 +116,19 @@
       </button>
     </div>
   </form>
-
-
-
-  <!--Card displays of search results (park name, price range, rating, photo)-->
-  <div class="row" id="resultcards">
+  <div class="row" id="resultcards"><!--Card displays of search results (park name, price range, rating, photo)-->
     These will be dynamically created cards of search results
   </div>
 </div>
-
-
-<div class="col-sm tripbar"><div id="tripview">View Your Trips
+ <div class="col-sm tripbar"><div id="tripview">View Your Trips
         <select class="form-group col-sm-4 mb-2">
         <option>DYNAMICALLY CREATE OPTIONS</option>
         </select>
-    </div></div> </div>
+    </div></div>
+</div>
+  
+  
+ 
 </body>
 
 </html>
