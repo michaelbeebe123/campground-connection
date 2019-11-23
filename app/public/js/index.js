@@ -35,6 +35,11 @@ $("#submitBtn").on("click", function () {
 //     }, 3000);
 // });
 
+var parkCode = ""
+var cityName = ""
+var url = ""
+var description = ""
+var directionsURL = ""
 
 function getParks(){
     var queryURLParks= "https://developer.nps.gov/api/v1/parks?&stateCode="+ state +"&limit="+ limit + "&api_key=" + parkAPIKey;
@@ -45,21 +50,23 @@ function getParks(){
         method: "GET"
     }).then(function (response){
         console.log(response);
+        console.log(response.data[0].parkCode);
 
-        for (var i = 0; i <response.length; i++){
-        parkCode= response[i].data.parkCode;
-        var cityName= response[i].data.name;
-        var url = response[i].data.url;
-        var description = response[i].data.description;
-        var directionsURL = response[i].data.directionsURL;
-        
-        $(parkResults).push(parkCode);
-        $(parkResults).push(cityName);
-        $(parkResults).push(description);
-        $(parkResults).push(url);
-        $(parkResults).push(directionsURL);
+        for (var i = 0; i < response.data.length; i++){
+            console.log(i)
+            parkCode= response.data[i].parkCode;
+            cityName= response.data[i].name;
+            url = response.data[i].url;
+            description = response.data[i].description;
+            directionsURL = response.data[i].directionsURL;
+            
+            parkResults.push(parkCode);
+            parkResults.push(cityName);
+            parkResults.push(description);
+            parkResults.push(url);
+            parkResults.push(directionsURL);
 
-        console.log(parkResults)
+            console.log(parkResults);
   
     }
       
