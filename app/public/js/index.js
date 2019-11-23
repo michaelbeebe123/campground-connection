@@ -11,7 +11,7 @@ $("#submitBtn").on("click", function () {
     var loader = $("<div>");
     loader.attr("id", "loader");
     loader.html("<h3>Get excited parks are on the way!</h3>")
-    loader.append("<img src=https://media.giphy.com/media/pNsBooBjruKnm/giphy.gif>");
+    loader.append("<img src=https://giphy.com/gifs/5tfqO7ClftEsoa6J7h>");
     $("#loader").html(loader);
 
     //call functions
