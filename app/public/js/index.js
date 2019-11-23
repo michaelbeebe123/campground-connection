@@ -8,7 +8,9 @@ var parkCode;
 $("#submitBtn").on("click", function () {
     event.preventDefault();
     state = $("#inputState").val();
+    limit = $("#limitNumber").val();
     console.log(state);
+    console.log(limit);
     // create loading gif and push onto page
     // var loader = $("<div>");
     // loader.attr("id", "loader");
@@ -34,7 +36,7 @@ $("#submitBtn").on("click", function () {
 
 
 function getParks(){
-    var queryURLParks= "https://developer.nps.gov/api/v1/parks?&stateCode="+ state +"&limit=10&api_key=" + parkAPIKey;
+    var queryURLParks= "https://developer.nps.gov/api/v1/parks?&stateCode="+ state +"&limit="+ limit + "&api_key=" + parkAPIKey;
     console.log(queryURLParks)
     
     $.ajax({
