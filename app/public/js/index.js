@@ -6,7 +6,7 @@ $(document).ready(function () {
     var parkCode;
     var parkResults = [];
     var parkCode = ""
-    var cityName = ""
+    var parkName = ""
     var url = ""
     var description = ""
     var directionsURL = ""
@@ -53,13 +53,13 @@ $(document).ready(function () {
                 console.log(i)
                 var newParkArray = [];
                 parkCode = response.data[i].parkCode;
-                cityName = response.data[i].name;
+                parkName = response.data[i].name;
                 url = response.data[i].url;
                 description = response.data[i].description;
                 directionsURL = response.data[i].directionsUrl;
 
                 newParkArray.push(parkCode);
-                newParkArray.push(cityName);
+                newParkArray.push(parkName);
                 newParkArray.push(description);
                 newParkArray.push(url);
                 newParkArray.push(directionsURL);
