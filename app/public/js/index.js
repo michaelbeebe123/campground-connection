@@ -4,6 +4,7 @@ var parkAPIKey= "Pjmdd03bG2N1jCIooMRyVf5RWpxWgOMFF2Eg0xC3"
 var state;
 var limit;
 var parkCode;
+var parkResults = [];
 
 $("#submitBtn").on("click", function () {
     event.preventDefault();
@@ -44,13 +45,25 @@ function getParks(){
         method: "GET"
     }).then(function (response){
         console.log(response);
-        parkCode= response.data.parkCode;
-        var cityName= response.data.name;
-        var url = response.data.url;
-        var description = response.data.description;
-        var directionsURL = response.data.directionsURL;
-        console.log(cityName);
-        console.log(parkCode);
+
+        for (var i = 0; i <response.length; i++){
+        parkCode= response[i].data.parkCode;
+        var cityName= response[i].data.name;
+        var url = response[i].data.url;
+        var description = response[i].data.description;
+        var directionsURL = response[i].data.directionsURL;
+        
+        $(parkResults).push(parkCode);
+        $(parkResults).push(cityName);
+        $(parkResults).push(description);
+        $(parkResults).push(url);
+        $(parkResults).push(directionsURL);
+
+        console.log(parkResults)
+  
+    }
+      
+
     })
 
 }
