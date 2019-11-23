@@ -5,42 +5,41 @@ form.login {
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
 }
 
-.main{
-  background-color:lightblue;
-  font-size: large;
-  }
-a{color:darkgreen;}
-.main button{
-  font-size:small;
+a{color:darkgreen;
+  text-decoration: none}
+
+
+h1 button{
+  font-size: 100%;
+  font-family:inherit;
+  border:0;
+  padding:0;
+  background-color:transparent;
 }
 
-/*main/header:
-background image?
-all the way across (no margin)
-Campground connection to the left
-Email form, login and signup to the right
+h1 button a:hover{
+  text-decoration:none;
+  color:darkgreen;
+}
+
+.log{
+  display: flex;             
+  align-items: flex-end;
+}
+
+
+/*index
+-more search inputs?
+-view your trips
+-style card displays
 */
 
-/*body of index/parksearch
-background image?
-search requirement forms
-state dropdown
-view your trips
-space/styling for cards
-*/
-
-/*body of park*/
-
-/*body of campground*/
-
-/*body of trips*/
-
-/*body of members?
-possibly list of saved campgrounds/parks????
-*/
-
-/* ody of signup*/
-
-/*body of login*/
+/*park*/
+/*campground*/
+/*trips*/
+/*members*/
+/*signup*/
+/*login*/
