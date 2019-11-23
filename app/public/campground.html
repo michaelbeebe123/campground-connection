@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Campground</title>
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -14,18 +14,31 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link href="stylesheets/style.css" rel="stylesheet">
 </head>
 <body>
     <!--Logo/main button--><!--Login/username input (takes you to login with an autofill?)--><!--Sign In--><!--Sign Up-->
-    <div class="row">
-            <div class="col-6"><button id="logo"><a href="/index">Campground Connection</a></button>></div>
-            <div><form>This form will be an input for the username</form>></div>
-            <div><button><a href="/login">Log In</a></button></div>
-            <div><button><a href="/signup">Sign Up</a></button></div>
-    </div>
+    <div class="container">
+            <div class="row">
+                <form class="form-inline">
+                    <div class="form-group mb-2" id="logo">
+                        <a href="/index">Campground Connection</a>
+                    </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="email" class="form-control" id="emailinput" placeholder="Email">
+                 </div>
+                <button><a href="/login">Log In</a></button>
+                <button><a href="/signup">Sign Up</a></button>
+                </form>
+            </div>
     <!--Park Name--><!--State--><!--View Your Trips-->
     <div class="row">
-        <div id="campname">Campground Name, Park Name, State</div><div id="tripview">(dropdown) View Your Trips</div>
+        <div id="campname">Campground Name, Park Name, State</div>
+        <div id="tripview">(dropdown) View Your Trips
+            <select class="form-control form-control-sm">
+            <option>DYNAMICALLY CREATE OPTIOSN</option>
+            </select>
+        </div>
     </div>
     <!--Hours-->
     <div class="row" id="hours">Hours</div>
@@ -38,7 +51,12 @@
     <!--Amenities/Accesibility Info-->
     <div class="row" id="access">Amenities/Accesibility Info</div>
     <!--Save this campground--><!--Trip Option-->
-    <div class="row"><button id="campsave">Save This Campground</button><div id="tripview">(dropdown) Trip Options</div></div>
+    <div class="row"><button id="campsave">Save This Campground</button>
+        <div id="tripview">(dropdown) Trip Options
+            <select class="form-control form-control-sm">
+            <option>DYNAMICALLY CREATE OPTIONS</option>
+            </select>
+        </div></div>
     <!--Reviews?-->
     <div class="row" id="reviews">Reviews?</div>
 </body>

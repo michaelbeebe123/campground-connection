@@ -6,29 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Campground Connection</title>
+
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link href="stylesheets/style.css" rel="stylesheet">
 </head>
 <body>
     <!--Logo/main button--><!--Login/username input (takes you to login with an autofill?)--><!--Sign In--><!--Sign Up-->
-    <div class="row">
-        <div class="col-6"><button id="logo"><a href="/index">Campground Connection</a></button>></div>
-        <div><form>This form will be an input for the username</form>></div>
-        <div><button><a href="/login">Log In</a></button></div>
-        <div><button><a href="/signup">Sign Up</a></button></div>
+    <div class="container">
+    <div class="row main">
+        <form class="form-inline">
+            <div class="form-group mb-2" id="logo">
+                <a href="/index">Campground Connection</a>
+            </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <input type="email" class="form-control" id="emailinput" placeholder="Email">
+         </div>
+        <button><a href="/login">Log In</a></button>
+        <button><a href="/signup">Sign Up</a></button>
+        </form>
     </div>
     <!--Search Park--><!--Requirements(park or campground, state)--><!--View Your Trips list of trip names if logged in-->
     <div class="row">
-        <div>Search Park (Requirement forms will be here)</div><div>Search State Dropdown</div><div>Select Park or Campground</div>>
+        <div>Search Park (Requirement forms will be here)</div>
+        <div>Search State Dropdown
+            <select class="form-control form-control-sm">
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+            </select>
+        </div>
+        <div>Select Park or Campground</div>
         <div>(Drop down) View Your Trips</div>
     </div>
     <!--Card displays of search results (park name, price range, rating, photo)-->
     <div class="row" id="resultcards">These will be dynamically created cards of search results</div>
+</div>
 </body>
 </html>

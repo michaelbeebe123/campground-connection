@@ -2,3 +2,45 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main{
+  background-color:lightblue;
+  font-size: large;
+  }
+a{color:darkgreen;}
+.main button{
+  font-size:small;
+}
+
+/*main/header:
+background image?
+all the way across (no margin)
+Campground connection to the left
+Email form, login and signup to the right
+*/
+
+/*body of index/parksearch
+background image?
+search requirement forms
+state dropdown
+view your trips
+space/styling for cards
+*/
+
+/*body of park*/
+
+/*body of campground*/
+
+/*body of trips*/
+
+/*body of members?
+possibly list of saved campgrounds/parks????
+*/
+
+/* ody of signup*/
+
+/*body of login*/
