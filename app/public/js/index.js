@@ -21,7 +21,7 @@ $(document).ready(function () {
         var loader = $("<div>");
         loader.attr("id", "loader");
         loader.html("<h3>Get excited parks are on the way!</h3>")
-        loader.append("<img src=https://giphy.com/gifs/5tfqO7ClftEsoa6J7h>");
+        loader.append("<img src=images/loader.gif>");
         $("#loader").html(loader);
 
         // call functions
@@ -30,13 +30,11 @@ $(document).ready(function () {
 
     $(document).ajaxStart(function () {
         // Show image container
-        $("#row1").hide();
-        $("#row2").hide();
+        $("#form").hide();
         $("#loader").show();
         setTimeout(function () {
             $("#loader").hide();
-            $("#row1").show();
-            $("#row2").show();
+            $("#form").show();
         }, 3000);
     });
 
