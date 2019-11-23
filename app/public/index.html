@@ -26,44 +26,35 @@
 
 <body>
   <div class="jumbotron" id="jumbo">
-    <h1 id="titleHeader" class="display-4">Campground Connection</h1>
-    <p class="lead">
-      This is a simple hero unit, a simple jumbotron-style component for
-      calling extra attention to featured content or information.
-    </p>
+    <h1 id="titleHeader" class="display-4">
+            <button id="logo">
+                    <a href="/index">Campground Connection</a>
+            </button>
+    </h1>
     <hr class="my-4" />
-    <p>
-      It uses utility classes for typography and spacing to space content out
-      within the larger container.
+    <p class=log>
+            <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="email" class="form-control" id="emailinput" placeholder="Email">
+                     </div>
+                    <button><a href="/login">Log In</a></button>
+                    <button><a href="/signup">Sign Up</a></button>
+                    </form>
     </p>
+    <p></p>
   </div>
-  <!--Logo/main button-->
-  <!--Login/username input (takes you to login with an autofill?)-->
-  <!--Sign In-->
-  <!--Sign Up-->
-  <div class="row">
-    <div class="col-6">
-      <button class="btn btn-primary" id="logo"><a href="/index">Campground Connection</a></button>>
-    </div>
-    <div>
-      <form>This form will be an input for the username</form>
-      >
-    </div>
-    <div>
-      <button class="btn btn-primary"><a href="/login">Log In</a></button>
-    </div>
-    <div>
-      <button class="btn btn-primary"><a href="/signup">Sign Up</a></button>
-    </div>
-  </div>
+
+  
   <!--Search Park-->
   <!--Requirements(park or campground, state)-->
   <!--View Your Trips list of trip names if logged in-->
-
+<div class="container">
+    <div class="row"><div class="col-lg">
+    <h1>Search the National Parks</h1>
   <form>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Select State</label>
-      <select class="form-group col-md-4" id="inputState">
+      <select class="form-group col-sm-1 mb-2" id="inputState">
         <option>AL</option>
         <option>AK</option>
         <option>AZ</option>
@@ -115,7 +106,7 @@
         <option>WI</option>
         <option>WY</option>
       </select>
-      <select class="form-group col-md-2" id="limitNumber">
+      <select class="form-group col-sm-1 mb-2" id="limitNumber">
         <option>5</option>
         <option>10</option>
         <option>15</option>
@@ -125,6 +116,9 @@
       </button>
     </div>
   </form>
+</div>
+<div class="col-sm">View Your Trip</div>
+</div>
   <!--Card displays of search results (park name, price range, rating, photo)-->
   <div class="row" id="resultcards">
     These will be dynamically created cards of search results
