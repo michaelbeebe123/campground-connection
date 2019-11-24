@@ -47,30 +47,42 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            console.log(response.data[0].parkCode);
 
             for (var i = 0; i < response.data.length; i++) {
-                console.log(i)
-                var newParkArray = [];
-                parkCode = response.data[i].parkCode;
-                parkName = response.data[i].name;
-                url = response.data[i].url;
-                description = response.data[i].description;
-                directionsURL = response.data[i].directionsUrl;
+                // console.log(i)
+                // var newParkArray = [];
+                // parkCode = response.data[i].parkCode;
+                // parkName = response.data[i].name;
+                // url = response.data[i].url;
+                // description = response.data[i].description;
+                // directionsURL = response.data[i].directionsUrl;
 
-                newParkArray.push(parkCode);
-                newParkArray.push(parkName);
-                newParkArray.push(description);
-                newParkArray.push(url);
-                newParkArray.push(directionsURL);
+                // newParkArray.push(parkCode);
+                // newParkArray.push(parkName);
+                // newParkArray.push(description);
+                // newParkArray.push(url);
+                // newParkArray.push(directionsURL);
 
-                parkResults.push(newParkArray);
+                // parkResults.push(newParkArray);
 
-                console.log(parkResults);
+                // console.log(parkResults);
+
+                var newParkObject = {
+                    parkCode: response.data[i].parkCode,
+                    cityName: response.data[i].name,
+                    url: response.data[i].url,
+                    description: response.data[i].description,
+                    directionsURL: response.data[i].directionsUrl,
+                };
+
+                parkResults.push(newParkObject);
 
             }
 
-
+            $(".card-button").on("click", function (event) {
+                event.preventDefault();
+                parkCode = parkResults[this.value].parkCode
+            })
 
         })
 
