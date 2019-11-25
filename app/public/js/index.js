@@ -38,6 +38,7 @@ $(document).ready(function () {
         }, 3000);
     });
 
+    // TODO: ADD PARK IMAGE TO THE AJAX CALL
     function getParks() {
         var queryURLParks = "https://developer.nps.gov/api/v1/parks?&stateCode=" + state + "&limit=" + limit + "&api_key=" + parkAPIKey;
         console.log(queryURLParks)
@@ -69,7 +70,7 @@ $(document).ready(function () {
 
                 var newParkObject = {
                     parkCode: response.data[i].parkCode,
-                    cityName: response.data[i].name,
+                    parkName: response.data[i].name,
                     url: response.data[i].url,
                     description: response.data[i].description,
                     directionsURL: response.data[i].directionsUrl,
