@@ -37,7 +37,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $("#loader").hide();
             $("#form").show();
-        }, 3000);
+        }, 4000);
     });
 
     // TODO: ADD PARK IMAGE TO THE AJAX CALL
