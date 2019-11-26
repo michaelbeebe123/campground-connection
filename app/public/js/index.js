@@ -74,7 +74,7 @@ $(document).ready(function () {
                 var newParkObject = {
                     parkCode: response.data[i].parkCode,
                     parkName: response.data[i].name,
-                    parkPic: response.data[i].images[0].url,
+                    // parkPic: response.data[i].images[0].url,
                     url: response.data[i].url,
                     description: response.data[i].description,
                     directionsURL: response.data[i].directionsUrl,
@@ -82,6 +82,22 @@ $(document).ready(function () {
 
                 parkResults.push(newParkObject);
 
+            }
+
+            for (var i =0; i < parkResults.length; i++) {
+                var parkCards = 
+                `<div class="card mb-3">
+                    <img src="${parkResults[i].parkPic}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" id="park-name">${parkResults[i].name}</h5>
+                            <p class="card-text" id="park-description">${parkResults[i].description}</p>
+                            <p class ="card-text" id ="park-url">${parkResults[i].url}</p>
+                            <p class ="card-text" id ="directions-url">${parkResults[i].directionsUrl}</p>
+                        </div>
+                </div>`
+                console.log(parkCards);
+
+                $("#resultcards").html(parkCards);
             }
 
             $(".card-button").on("click", function (event) {
