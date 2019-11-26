@@ -99,19 +99,23 @@ $(document).ready(function () {
             url: queryURLCamp,
             method: "GET"
         }).then(function (response) {
-            var campName = response.name;
-            var description = response.description;
 
-            //amenities
-            var toilets = response.amenities.toilets;
-            var showers = response.amenities.showers;
-            var dumpstation = response.amenities.dumpstation;
-            var firestovepolicy = response.accessibility.firestovepolicy;
+            for (var i = 0; i < response.length; i++) {
+                var campName = response.data[i].name;
+                var description = response.data[i].description;
 
-            //accessibility
-            var adainfo = response.accessibility.adainfo;
-            var wheelchairaccess = response.accessibility.wheelchairaccess;
-            var rvinfo = response.accessibility.rvinfo;
+                //amenities
+                var toilets = response.data[i].amenities.toilets;
+                var showers = response.data[i].amenities.showers;
+                var dumpstation = response.data[i].amenities.dumpstation;
+                var firestovepolicy = response.data[i].accessibility.firestovepolicy;
+
+                //accessibility
+                var adainfo = response.data[i].accessibility.adainfo;
+                var wheelchairaccess = response.data[i].accessibility.wheelchairaccess;
+                var rvinfo = response.data[i].accessibility.rvinfo;
+
+            }
 
 
         })
