@@ -17,12 +17,13 @@ $(document).ready(function () {
         limit = $("#limitNumber").val();
         console.log(state);
         console.log(limit);
+
         // create loading gif and push onto page
         var loader = $("<div>");
         loader.attr("id", "loader");
         loader.html("<h3>Get excited parks are on the way!</h3>")
         loader.append("<img src=images/loader.gif>");
-        $("#loader").html(loader);
+        $("#parksloader").html(loader);
 
         // call functions
         getParks()
@@ -30,6 +31,7 @@ $(document).ready(function () {
 
     $(document).ajaxStart(function () {
         // Show image container
+        console.log("loader")
         $("#form").hide();
         $("#loader").show();
         setTimeout(function () {
