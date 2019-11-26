@@ -5,11 +5,12 @@ $(document).ready(function () {
     var limit;
     var parkCode;
     var parkResults = [];
-    var parkCode = ""
-    var parkName = ""
-    var url = ""
-    var description = ""
-    var directionsURL = ""
+    var parkCode = "";
+    var parkName = "";
+    var parkPic= "";
+    var url = "";
+    var description = "";
+    var directionsURL = "";
 
     $("#submitBtn").on("click", function () {
         event.preventDefault();
@@ -73,6 +74,7 @@ $(document).ready(function () {
                 var newParkObject = {
                     parkCode: response.data[i].parkCode,
                     parkName: response.data[i].name,
+                    parkPic: response.data[i].images[0].url,
                     url: response.data[i].url,
                     description: response.data[i].description,
                     directionsURL: response.data[i].directionsUrl,
