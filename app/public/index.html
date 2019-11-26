@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link href=“https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap” rel=“stylesheet”>
-  <link rel="stylesheet" href="stylesheets/index.css" />
   <link rel="stylesheet" href="stylesheets/style.css" />
 
   <!-- jQuery library -->
@@ -48,7 +47,7 @@
   <!--Search Park-->
   <!--Requirements(park or campground, state)-->
   <!--View Your Trips list of trip names if logged in-->
-<div class="container">
+<div class="container" id="form">
     <div class="row"><div class="col-lg">
     <h1>Search the National Parks</h1>
   <form>
@@ -111,7 +110,7 @@
         <option>10</option>
         <option>15</option>
       </select>
-      <button type="submit" class="btn btn-primary" id="submitBtn">
+      <button type="submit" class="btn btn-success" id="submitBtn">
         Submit
       </button>
     </div>
@@ -120,6 +119,8 @@
     These will be dynamically created cards of search results
   </div>
 </div>
+
+
  <div class="col-sm tripbar"><div id="tripview">View Your Trips
         <select class="form-group col-sm-4 mb-2">
         <option>DYNAMICALLY CREATE OPTIONS</option>
@@ -127,7 +128,7 @@
     </div></div>
 </div>
   
-  
+<div id="parksloader">Loader</div>
  
 </body>
 

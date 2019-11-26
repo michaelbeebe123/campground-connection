@@ -8,7 +8,7 @@ body{
   
 }
 
-a{color:darkgreen;
+a{color:#00551C;
   text-decoration: none}
 
 #jumbo{
@@ -32,9 +32,8 @@ h1 button{
 
 h1 button a:hover{
   text-decoration:none;
-  color:darkgreen;
+  color:#00551C;
 }
-
 
 
 .tripbar{
