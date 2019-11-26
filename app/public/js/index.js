@@ -7,7 +7,7 @@ $(document).ready(function () {
     var parkResults = [];
     var parkCode = "";
     var parkName = "";
-    var parkPic= "";
+    var parkPic = "";
     var url = "";
     var description = "";
     var directionsURL = "";
@@ -84,20 +84,20 @@ $(document).ready(function () {
 
             }
 
-            for (var i =0; i < parkResults.length; i++) {
-                var parkCards = 
-                `<div class="card mb-3">
+            for (var i = 0; i < parkResults.length; i++) {
+                var parkCards =
+                    `<div class="card mb-3">
                     <img src="${parkResults[i].parkPic}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title" id="park-name">${parkResults[i].name}</h5>
+                            <h5 class="card-title" id="park-name">${parkResults[i].parkName}</h5>
                             <p class="card-text" id="park-description">${parkResults[i].description}</p>
                             <p class ="card-text" id ="park-url">${parkResults[i].url}</p>
-                            <p class ="card-text" id ="directions-url">${parkResults[i].directionsUrl}</p>
+                            <p class ="card-text" id ="directions-url">${parkResults[i].directionsURL}</p>
                         </div>
                 </div>`
                 console.log(parkCards);
 
-                $("#resultcards").html(parkCards);
+                $("#resultcards").append(parkCards);
             }
 
             $(".card-button").on("click", function (event) {
