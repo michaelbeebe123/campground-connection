@@ -1,6 +1,7 @@
 <!--Park results-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,21 +13,21 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link href=“https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap” rel=“stylesheet”>
     <link rel="stylesheet" href="stylesheets/style.css" />
-              
+
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-              
+
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-              
+
     <script src="js/index.js"></script>
 </head>
-              
+
 <body>
     <div class="jumbotron" id="jumbo">
         <h1 id="titleHeader" class="display-4">
             <button id="logo">
-                <a href="/index">Campground Connection</a>
+                <a href="./index.html"><img src="./images/campconnectlogotrans.png"></img></a>
             </button>
         </h1>
         <hr class="my-4" />
@@ -40,29 +41,33 @@
             </form>
         </p>
     </div>
-              
-                
-                <!--Search Park-->
-                <!--Requirements(park or campground, state)-->
-                <!--View Your Trips list of trip names if logged in-->
-              <div class="container">
-                  
-                  <div class="row results">
-                     
-                  <div class="col-lg">
-                        <div>Park Name, State</div>
-                        <div>Designation</div>
-                        <div>Description</div>
-                        <div>Direction Link</div><div>Park Website</div>
-                        <div>List of Campgrounds</div>          
-              </div>
-              
-              
-              <div class="col-sm tripbar"><div id="tripview">View Your Trips
-                      <select class="form-group col-sm-4 mb-2">
-                      <option>DYNAMICALLY CREATE OPTIONS</option>
-                      </select>
-                  </div></div> </div>
-              </body>
+
+
+    <!--Search Park-->
+    <!--Requirements(park or campground, state)-->
+    <!--View Your Trips list of trip names if logged in-->
+    <div class="container">
+
+        <div class="row results">
+
+            <div class="col-lg">
+                <div>Park Name, State</div>
+                <div>Designation</div>
+                <div>Description</div>
+                <div>Direction Link</div>
+                <div>Park Website</div>
+                <div>List of Campgrounds</div>
+            </div>
+
+
+            <div class="col-sm tripbar">
+                <div id="tripview">View Your Trips
+                    <select class="form-group col-sm-4 mb-2">
+                        <option>DYNAMICALLY CREATE OPTIONS</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+</body>
 
 </html>

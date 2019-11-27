@@ -17,6 +17,7 @@ a{color:#00551C;
     background-size: cover;
     display:flex;
 }
+
 .log{
   display: flex;             
   align-items: flex-end;
