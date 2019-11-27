@@ -17,8 +17,6 @@ a{color:#00551C;
   height:100%
 }
 
-
-
 #jumbo{
     background-image: url(../images/mountain-pic.png);
     background-repeat: no-repeat;
@@ -52,10 +50,6 @@ h1 button a:hover{
 
 .tripbar{
   text-align:right;
-}
-
-.results{
-  text-align: center;
 }
 /*index
 -more search inputs?
