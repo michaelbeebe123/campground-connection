@@ -5,11 +5,12 @@ $(document).ready(function () {
     var limit;
     var parkCode;
     var parkResults = [];
-    var parkCode = ""
-    var cityName = ""
-    var url = ""
-    var description = ""
-    var directionsURL = ""
+    var parkCode = "";
+    var parkName = "";
+    var parkPic = "";
+    var url = "";
+    var description = "";
+    var directionsURL = "";
 
     $("#submitBtn").on("click", function () {
         event.preventDefault();
@@ -17,12 +18,13 @@ $(document).ready(function () {
         limit = $("#limitNumber").val();
         console.log(state);
         console.log(limit);
+
         // create loading gif and push onto page
         var loader = $("<div>");
         loader.attr("id", "loader");
         loader.html("<h3>Get excited parks are on the way!</h3>")
         loader.append("<img src=images/loader.gif>");
-        $("#loader").html(loader);
+        $("#parksloader").html(loader);
 
         // call functions
         getParks()
@@ -30,14 +32,16 @@ $(document).ready(function () {
 
     $(document).ajaxStart(function () {
         // Show image container
+        console.log("loader")
         $("#form").hide();
         $("#loader").show();
         setTimeout(function () {
             $("#loader").hide();
             $("#form").show();
-        }, 3000);
+        }, 4000);
     });
 
+    // TODO: ADD PARK IMAGE TO THE AJAX CALL
     function getParks() {
         var queryURLParks = "https://developer.nps.gov/api/v1/parks?&stateCode=" + state + "&limit=" + limit + "&api_key=" + parkAPIKey;
         console.log(queryURLParks)
@@ -47,30 +51,59 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            console.log(response.data[0].parkCode);
 
             for (var i = 0; i < response.data.length; i++) {
-                console.log(i)
-                var newParkArray = [];
-                parkCode = response.data[i].parkCode;
-                cityName = response.data[i].name;
-                url = response.data[i].url;
-                description = response.data[i].description;
-                directionsURL = response.data[i].directionsUrl;
+                // console.log(i)
+                // var newParkArray = [];
+                // parkCode = response.data[i].parkCode;
+                // parkName = response.data[i].name;
+                // url = response.data[i].url;
+                // description = response.data[i].description;
+                // directionsURL = response.data[i].directionsUrl;
 
-                newParkArray.push(parkCode);
-                newParkArray.push(cityName);
-                newParkArray.push(description);
-                newParkArray.push(url);
-                newParkArray.push(directionsURL);
+                // newParkArray.push(parkCode);
+                // newParkArray.push(parkName);
+                // newParkArray.push(description);
+                // newParkArray.push(url);
+                // newParkArray.push(directionsURL);
 
-                parkResults.push(newParkArray);
+                // parkResults.push(newParkArray);
 
-                console.log(parkResults);
+                // console.log(parkResults);
+
+                var newParkObject = {
+                    parkCode: response.data[i].parkCode,
+                    parkName: response.data[i].name,
+                    // parkPic: response.data[i].images[0].url,
+                    url: response.data[i].url,
+                    description: response.data[i].description,
+                    directionsURL: response.data[i].directionsUrl,
+                };
+
+                parkResults.push(newParkObject);
 
             }
 
+            for (var i = 0; i < parkResults.length; i++) {
+                var parkCards =
+                    `<div class="card mb-3">
+                    <img src="${parkResults[i].parkPic}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" id="park-name">${parkResults[i].parkName}</h5>
+                            <p class="card-text" id="park-description">${parkResults[i].description}</p>
+                            <p class ="card-text" id ="park-url">${parkResults[i].url}</p>
+                            <p class ="card-text" id ="directions-url">${parkResults[i].directionsURL}</p>
+                        </div>
+                </div>`
+                console.log(parkCards);
 
+                $("#resultcards").append(parkCards);
+            }
+
+            $(".card-button").on("click", function (event) {
+                event.preventDefault();
+                parkCode = parkResults[this.value].parkCode
+            })
 
         })
 
@@ -84,19 +117,23 @@ $(document).ready(function () {
             url: queryURLCamp,
             method: "GET"
         }).then(function (response) {
-            var campName = response.name;
-            var description = response.description;
 
-            //amenities
-            var toilets = response.amenities.toilets;
-            var showers = response.amenities.showers;
-            var dumpstation = response.amenities.dumpstation;
-            var firestovepolicy = response.accessibility.firestovepolicy;
+            for (var i = 0; i < response.length; i++) {
+                var campName = response.data[i].name;
+                var description = response.data[i].description;
 
-            //accessibility
-            var adainfo = response.accessibility.adainfo;
-            var wheelchairaccess = response.accessibility.wheelchairaccess;
-            var rvinfo = response.accessibility.rvinfo;
+                //amenities
+                var toilets = response.data[i].amenities.toilets;
+                var showers = response.data[i].amenities.showers;
+                var dumpstation = response.data[i].amenities.dumpstation;
+                var firestovepolicy = response.data[i].accessibility.firestovepolicy;
+
+                //accessibility
+                var adainfo = response.data[i].accessibility.adainfo;
+                var wheelchairaccess = response.data[i].accessibility.wheelchairaccess;
+                var rvinfo = response.data[i].accessibility.rvinfo;
+
+            }
 
 
         })
