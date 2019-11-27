@@ -77,7 +77,7 @@ $(document).ready(function () {
                             <p class="card-text" id="park-description">${parkResults[i].description}</p>
                             <p class ="card-text" id ="park-url">Park Website: ${parkResults[i].url}</p>
                             <p class ="card-text" id ="directions-url">Directions: ${parkResults[i].directionsURL}</p>
-                            <button id="view-campgrounds"><a href="">View Campgrounds</a></button>
+                            <button class="view-campgrounds"><a href="">View Campgrounds</a></button>
                         </div>
                 </div>`
 
@@ -88,7 +88,7 @@ $(document).ready(function () {
                 }
             }
 
-            $("#view-campgrounds").on("click", function (event) {
+            $(".view-campgrounds").on("click", function (event) {
                 event.preventDefault();
                 parkCode = parkResults[this.value].parkCode
             })
