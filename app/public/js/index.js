@@ -77,9 +77,9 @@ $(document).ready(function () {
                             <p class="card-text" id="park-description">${parkResults[i].description}</p>
                             <p class ="card-text" id ="park-url">Park Website: ${parkResults[i].url}</p>
                             <p class ="card-text" id ="directions-url">Directions: ${parkResults[i].directionsURL}</p>
-                            <button class="view-campgrounds" value=${i}><a href="">View Campgrounds</a></button>
+                            <button class="view-campgrounds"><a href="">View Campgrounds</a></button>
                         </div>
-                </div>`
+                </div>'
 
                 $("#resultcards").append(parkCards);
 
