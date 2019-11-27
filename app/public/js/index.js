@@ -36,11 +36,11 @@ $(document).ready(function () {
     $(document).ajaxStart(function () {
         // Show image container
         console.log("loader")
-        $("#form").hide();
+        $("#resultcards").hide();
         $("#loader").show();
         setTimeout(function () {
             $("#loader").hide();
-            $("#form").show();
+            $("#resultcards").show();
         }, 3000);
     });
 
