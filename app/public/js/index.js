@@ -24,7 +24,7 @@ $(document).ready(function () {
         // create loading gif and push onto page
         var loader = $("<div>");
         loader.attr("id", "loader");
-        loader.html("<h3>Get excited parks are on the way!</h3>")
+        loader.html("<h3>Get excited, parks are on the way!</h3>")
         loader.append("<img src=images/loader.gif>");
         $("#parksloader").html(loader);
 
@@ -79,7 +79,7 @@ $(document).ready(function () {
                             <p class ="card-text" id ="directions-url">Directions: ${parkResults[i].directionsURL}</p>
                             <button class="view-campgrounds"><a href="">View Campgrounds</a></button>
                         </div>
-                </div>`
+                </div>'
 
                 $("#resultcards").append(parkCards);
 
@@ -90,7 +90,9 @@ $(document).ready(function () {
 
             $(".view-campgrounds").on("click", function (event) {
                 event.preventDefault();
-                parkCode = parkResults[this.value].parkCode
+                parkCode = parkResults[this.val].parkCode;
+                console.log(parkCode);
+                getCamp(parkCode);
             })
 
         })
@@ -105,6 +107,7 @@ $(document).ready(function () {
             url: queryURLCamp,
             method: "GET"
         }).then(function (response) {
+            console.log(response);
 
             for (var i = 0; i < response.length; i++) {
                 var campName = response.data[i].name;
