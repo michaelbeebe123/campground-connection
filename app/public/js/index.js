@@ -90,7 +90,7 @@ $(document).ready(function () {
 
             $(".view-campgrounds").on("click", function (event) {
                 event.preventDefault();
-                parkCode = parkResults[this.val].parkCode;
+                parkCode = parkResults[this.value].parkCode;
                 console.log(parkCode);
                 getCamp(parkCode);
             })
