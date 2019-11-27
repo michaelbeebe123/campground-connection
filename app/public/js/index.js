@@ -74,7 +74,7 @@ $(document).ready(function () {
                 var newParkObject = {
                     parkCode: response.data[i].parkCode,
                     parkName: response.data[i].name,
-                    // parkPic: response.data[i].images[0].url,
+                    parkPic: response.data[i].images,
                     url: response.data[i].url,
                     description: response.data[i].description,
                     directionsURL: response.data[i].directionsUrl,
@@ -87,17 +87,20 @@ $(document).ready(function () {
             for (var i = 0; i < parkResults.length; i++) {
                 var parkCards =
                     `<div class="card mb-3">
-                    <img src="${parkResults[i].parkPic}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title" id="park-name">${parkResults[i].parkName}</h5>
                             <p class="card-text" id="park-description">${parkResults[i].description}</p>
-                            <p class ="card-text" id ="park-url">${parkResults[i].url}</p>
-                            <p class ="card-text" id ="directions-url">${parkResults[i].directionsURL}</p>
+                            <p class ="card-text" id ="park-url">Park Website: ${parkResults[i].url}</p>
+                            <p class ="card-text" id ="directions-url">Directions: ${parkResults[i].directionsURL}</p>
+                            <button id="view-campgrounds"><a href="">View Campgrounds</a></button>
                         </div>
                 </div>`
-                console.log(parkCards);
 
                 $("#resultcards").append(parkCards);
+
+                if (parkResults[i] === undefined) {
+
+                }
             }
 
             $(".card-button").on("click", function (event) {
