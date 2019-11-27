@@ -24,7 +24,7 @@ $(document).ready(function () {
         // create loading gif and push onto page
         var loader = $("<div>");
         loader.attr("id", "loader");
-        loader.html("<h3>Get excited, parks are on the way!</h3>")
+        loader.html("<h3>Get excited, campgrounds are on the way!</h3>")
         loader.append("<img src=images/loader.gif>");
         $("#parksloader").html(loader);
 
