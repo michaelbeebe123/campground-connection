@@ -26,8 +26,8 @@
 <body>
   <div class="jumbotron" id="jumbo">
     <h1 id="titleHeader" class="display-4">
-            <button id="logo">
-                    <a href="./index.html"><img src="./images/campconnectlogotrans.png"></img></a>
+      <button id="logo">
+        <a href="./index.html"><img src="./images/campconnectlogotrans.png"></img></a>
 
 
     </h1>
@@ -43,17 +43,14 @@
     </p>
     <p></p>
   </div>
-  
+
   <!--Search Park-->
   <!--Requirements(park or campground, state)-->
   <!--View Your Trips list of trip names if logged in-->
-  <div class="container" >
-    <div class="row text-center"  >
-        <div class="col-12" id="parksloader"></div>
-    </div>
-
+  <div class="container" id="infodisplay">
+    <!--row with search and trip-->
     <div class="row" id="form">
-      <div class="col-lg">
+      <div class="col-8 infocol" id="largecol">
         <h1>Search the National Parks</h1>
         <form>
           <div class="form-group">
@@ -119,21 +116,38 @@
               Submit
             </button>
           </div>
-        </form>
-        <div class="row" id="resultcards">
-          <!--Card displays of search results (park name, price range, rating, photo)-->
+      </div>
+      </form>
+      <div class="col-4 tripbar infocol">
+        <div id="tripview">View Your Trips
+          <p>
+            <select class="form-group col-sm-4 mb-2">
+              <option>DYNAMICALLY CREATE OPTIONS</option>
+            </select></p>
         </div>
       </div>
 
-
-      <div class="col-sm tripbar">
-        <div id="tripview">View Your Trips
-          <select class="form-group col-sm-4 mb-2">
-            <option>DYNAMICALLY CREATE OPTIONS</option>
-          </select>
-        </div>
+    </div>
+  </div>
+  <!--row with results cards display and loader-->
+  <div class="container">
+    <div class="row">
+      <div class="row text-center">
+        <div class="col-12 infocol" id="parksloader"></div>
+      </div>
+      <div class="row" id="resultcards">
+        <!--Card displays of search results (park name, price range, rating, photo)-->
       </div>
     </div>
+  </div>
+
+
+
+
+
+
+
+
 
 
 

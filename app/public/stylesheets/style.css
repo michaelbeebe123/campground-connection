@@ -5,11 +5,19 @@ form.login {
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
+  background:#00551C;
+  height:100%;
 }
 
 a{color:#00551C;
   text-decoration: none}
+
+#infodisplay{
+  background:#BDC2C5;
+  height:100%
+}
+
+
 
 #jumbo{
     background-image: url(../images/mountain-pic.png);
@@ -17,7 +25,9 @@ a{color:#00551C;
     background-size: cover;
     display:flex;
 }
-
+#logo{
+  margin-left:100px;
+}
 .log{
   display: flex;             
   align-items: flex-end;
