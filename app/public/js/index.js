@@ -40,7 +40,7 @@ $(document).ready(function () {
         setTimeout(function () {
             $("#loader").hide();
             $("#form").show();
-        }, 4000);
+        }, 3000);
     });
 
     // TODO: ADD PARK IMAGE TO THE AJAX CALL
@@ -55,23 +55,6 @@ $(document).ready(function () {
             console.log(response);
 
             for (var i = 0; i < response.data.length; i++) {
-                // console.log(i)
-                // var newParkArray = [];
-                // parkCode = response.data[i].parkCode;
-                // parkName = response.data[i].name;
-                // url = response.data[i].url;
-                // description = response.data[i].description;
-                // directionsURL = response.data[i].directionsUrl;
-
-                // newParkArray.push(parkCode);
-                // newParkArray.push(parkName);
-                // newParkArray.push(description);
-                // newParkArray.push(url);
-                // newParkArray.push(directionsURL);
-
-                // parkResults.push(newParkArray);
-
-                // console.log(parkResults);
 
                 var newParkObject = {
                     parkCode: response.data[i].parkCode,
@@ -105,7 +88,7 @@ $(document).ready(function () {
                 }
             }
 
-            $(".card-button").on("click", function (event) {
+            $("#view-campgrounds").on("click", function (event) {
                 event.preventDefault();
                 parkCode = parkResults[this.value].parkCode
             })
