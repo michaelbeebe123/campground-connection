@@ -75,11 +75,11 @@ $(document).ready(function () {
                         <div class="card-body">
                             <h5 class="card-title" id="park-name">${parkResults[i].parkName}</h5>
                             <p class="card-text" id="park-description">${parkResults[i].description}</p>
-                            <p class ="card-text" id ="park-url">Park Website: ${parkResults[i].url}</p>
-                            <p class ="card-text" id ="directions-url">Directions: ${parkResults[i].directionsURL}</p>
+                            <p class ="card-text" id ="park-url" <a href="${parkResults[i].url}">Website</a>></p>
+                            <p class ="card-text" id ="directions-url" <a href="${parkResults[i].directionsURL}">Directions</a>></p>
                             <button class="view-campgrounds"><a href="">View Campgrounds</a></button>
                         </div>
-                </div>'
+                </div>`
 
                 $("#resultcards").append(parkCards);
 
