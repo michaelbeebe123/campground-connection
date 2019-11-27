@@ -14,6 +14,8 @@ $(document).ready(function () {
 
     $("#submitBtn").on("click", function () {
         event.preventDefault();
+        $("#resultcards").empty();
+        parkResults = [];
         state = $("#inputState").val();
         limit = $("#limitNumber").val();
         console.log(state);
