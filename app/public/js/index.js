@@ -77,7 +77,7 @@ $(document).ready(function () {
                             <p class="card-text" id="park-description">${parkResults[i].description}</p>
                             <p class ="card-text" id ="park-url" <a href="${parkResults[i].url}">Website</a></p>
                             <p class ="card-text" id ="directions-url" <a href="${parkResults[i].directionsURL}">Directions</a></p>
-                            <button class="view-campgrounds"><a href="">View Campgrounds</a></button>
+                            <button class="view-campgrounds" value=${i}><a href="">View Campgrounds</a></button>
                         </div>
                 </div>`
 
@@ -92,7 +92,7 @@ $(document).ready(function () {
                 event.preventDefault();
                 parkCode = parkResults[this.value].parkCode;
                 console.log(parkCode);
-                getCamp(parkCode);
+                getCamp();
             })
 
         })
@@ -101,7 +101,7 @@ $(document).ready(function () {
 
     function getCamp() {
 
-        var queryURLCamp = "https://developer.nps.gov/api/v1/campgrounds?parkCode=" + parkCode + "&limit=" + limit + "&api_key=" + parkAPIKey;
+        var queryURLCamp = "https://developer.nps.gov/api/v1/campgrounds?parkCode=" + parkCode + "&limit=10" + "&api_key=" + parkAPIKey;
 
         $.ajax({
             url: queryURLCamp,
