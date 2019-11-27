@@ -44,7 +44,7 @@ $(document).ready(function () {
         }, 3000);
     });
 
- 
+
 
     function getCamp() {
 
@@ -75,10 +75,13 @@ $(document).ready(function () {
                 var parkCards =
                     `<div class="card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title" id="park-name">${campResults[i].parkName}</h5>
+                            <h3 class="card-title" id="park-name">${campResults[i].parkName}</h3>
+                            <hr>
                             <p class="card-text" id="park-description">${campResults[i].description}</p>
-                            <p class ="card-text" id ="park-url" <a href="${campResults[i].url}">Website</a></p>
-                            <p class ="card-text" id ="directions-url" <a href="${campResults[i].directionsURL}">Directions</a></p>
+                            <h5 class="card-title">Directions</h5>
+                            <p class="card-text" id="directions-overview">${campResults[i].directionsOverview}</p>
+                            <hr>
+                            <button class="btn btn-success" id ="directions-url" href="${campResults[i].directionsURL}">Map</button>
                             <button class="view-campgrounds btn btn-success" value=${i}>PLACEHOLDER</button>
                         </div>
                 </div>`
