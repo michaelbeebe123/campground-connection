@@ -46,4 +46,20 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.get("/api/trips/:id", function (req, res) {
+    db.Trip.findAll({
+      where: {
+        UserId: req.params.id
+      }
+    }).then(function (dbTrip) {
+      res.json(dbTrip);
+    });
+  });
+
+  app.post("/api/trips", function (req, res) {
+    db.Trip.create(req.body).then(function (dbPost) {
+      res.json(dbPost);
+    });
+  });
 };
