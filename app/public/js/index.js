@@ -113,7 +113,13 @@ $(document).ready(function () {
                 }
 
                 $("#weather").text(campResults[this.value].weatherOverview);
-                $("#directions").text(campResults[this.value].directionsOverview);
+
+                if (campResults[this.value].directionsOverview) {
+                    $("#directions").text(campResults[this.value].directionsOverview);
+                } else {
+                    $("#directions").text("N/A");
+                }
+
                 $("#dumpStation").text(campResults[this.value].dumpStation);
                 $("#cellPhone").text(campResults[this.value].cellPhone);
                 $("#toilets").text(campResults[this.value].toilets);
