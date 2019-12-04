@@ -95,7 +95,7 @@ $(document).ready(function () {
                             <p class="card-text" id="directions-overview">${campResults[i].directionsOverview}</p>
                             <hr>
                             <button class="btn btn-success" id ="directions-url" href="${campResults[i].directionsURL}">Map</button>
-                            <button class="view-campgrounds btn btn-success" value=${i}>PLACEHOLDER</button>
+                            <button class="view-campgrounds btn btn-success" value=${i}>See More</button>
                         </div>
                 </div>`
 
