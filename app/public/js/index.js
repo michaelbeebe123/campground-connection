@@ -62,9 +62,22 @@ $(document).ready(function () {
                 var newCampObject = {
                     parkName: response.data[i].name,
                     url: response.data[i].url,
+                    regulationsOverview: response.data[i].regulationsoverview,
+                    regulationsURL: response.data[i].regulationsurl,
                     description: response.data[i].description,
                     directionsOverview: response.data[i].directionsoverview,
+                    weatherOverview: response.data[i].weatheroverview,
                     directionsURL: response.data[i].directionsUrl,
+                    dumpStation: response.data[i].amenities.dumpstation,
+                    cellPhone: response.data[i].amenities.cellphonereception,
+                    toilets: response.data[i].amenities.toilets,
+                    showers: response.data[i].amenities.showers,
+                    internet: response.data[i].amenities.internetconnectivity,
+                    storageLocker: response.data[i].amenities.foodstoragelockers,
+                    campStore: response.data[i].amenities.campstore,
+                    laundry: response.data[i].amenities.laundry,
+                    fireStove: response.data[i].accessibility.firestovepolicy,
+
                 };
 
                 campResults.push(newCampObject);
@@ -82,7 +95,7 @@ $(document).ready(function () {
                             <p class="card-text" id="directions-overview">${campResults[i].directionsOverview}</p>
                             <hr>
                             <button class="btn btn-success" id ="directions-url" href="${campResults[i].directionsURL}">Map</button>
-                            <button class="view-campgrounds btn btn-success" value=${i}>PLACEHOLDER</button>
+                            <button class="view-campgrounds btn btn-success" value=${i}><a href="/campground">See More</a></button<a>
                         </div>
                 </div>`
 
