@@ -3,6 +3,12 @@ $(document).ready(function () {
     $("#no-trips").empty();
 
     $.get("/api/user_data").then(function (data) {
+        userName = data.fname;
+        userName = userName.charAt(0).toUpperCase() + userName.slice(1);
+        $("#user-name").text(userName);
+    });
+
+    $.get("/api/user_data").then(function (data) {
         var currentUser = data.id;
 
         $.get("/api/trips/" + currentUser, function (data) {
