@@ -2,36 +2,72 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Campground Connection</title>
+  <!-- Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link href=“https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap” rel=“stylesheet”>
+  <link rel="stylesheet" href="stylesheets/style.css" />
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="js/index.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
-  <div class="container">
+  <div class="jumbotron" id="jumbo">
+    <h1 id="titleHeader" class="display-4">
+      <button id="logo">
+        <a href="./index.html"><img src="./images/campconnectlogotrans.png"></img></a>
+
+
+    </h1>
+    <hr class="my-4" />
+    <p class=log>
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="email" class="form-control" id="emailinput" placeholder="Email">
+        </div>
+        <button><a href="/login">Log In</a></button>
+        <button><a href="/signup">Sign Up</a></button>
+      </form>
+    </p>
+    <p></p>
+  </div>
+
+ <div class="container" id="infodisplay">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Login Form</h2>
+      <div class="col text-center"><h2>Login Form</h2></div>
+    </div>
+    <div class="row">
+      <div class="col-md col-md-offset-6 text-center">
         <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
-        <br />
+            <div class="form-group justify-content-center">
+              <label for="exampleInputEmail1">Email address </label>
+              <input type="email" class="form-control" id="email-input" placeholder="Email">
+            </div>
+            <div class="form-group justify-content-cente">
+              <label for="exampleInputPassword1">Password </label>
+              <input type="password" class="form-control" id="password-input" placeholder="Password">
+            </div>
+            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span> <span class="msg"></span>
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+          </form>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col text-center">
         <p>Or sign up <a href="/">here</a></p>
       </div>
     </div>
