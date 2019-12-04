@@ -72,11 +72,11 @@ $(document).ready(function () {
                     cellPhone: response.data[i].amenities.cellphonereception,
                     toilets: response.data[i].amenities.toilets,
                     showers: response.data[i].amenities.showers,
-                    internet:response.data[i].amenities.internetconnectivity, 
+                    internet: response.data[i].amenities.internetconnectivity,
                     storageLocker: response.data[i].amenities.foodstoragelockers,
                     campStore: response.data[i].amenities.campstore,
                     laundry: response.data[i].amenities.laundry,
-                    fireStove: response.data[i].accessability.firestovepolicy,
+                    fireStove: response.data[i].accessibility.firestovepolicy,
 
                 };
 
@@ -95,7 +95,7 @@ $(document).ready(function () {
                             <p class="card-text" id="directions-overview">${campResults[i].directionsOverview}</p>
                             <hr>
                             <button class="btn btn-success" id ="directions-url" href="${campResults[i].directionsURL}">Map</button>
-                            <button class="view-campgrounds btn btn-success" value=${i}>See More</button>
+                            <button class="view-campgrounds btn btn-success" value=${i}><a href="/campground">See More</a></button<a>
                         </div>
                 </div>`
 
