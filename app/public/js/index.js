@@ -33,7 +33,8 @@ $(document).ready(function () {
         getCamp();
     })
 
-    $(document).ajaxStart(function () {
+    // $(document).ajaxStart(function () {
+    $("#submitBtn").on("click", function () {
         // Show image container
         console.log("loader")
         $("#resultcards").hide();
@@ -94,7 +95,7 @@ $(document).ready(function () {
                             <h5 class="card-title">Directions</h5>
                             <p class="card-text" id="directions-overview">${campResults[i].directionsOverview}</p>
                             <hr>
-                            <button class="btn btn-success" id ="directions-url" href="${campResults[i].directionsURL}">Map</button>
+                            <button class="btn btn-success save-campground" value=${i}>Save Campground</button>
                             <button class="view-campgrounds btn btn-success modal-button" data-toggle="modal" data-target="#campgroundModal" value=${i}>See More</button>
                         </div>
                 </div>`
@@ -137,6 +138,26 @@ $(document).ready(function () {
                 }
 
                 $("#regulationsURL").html("<a href='" + campResults[this.value].regulationsURL + "'>See regulations</a>");
+            })
+
+            $(".save-campground").on("click", function (event) {
+                event.preventDefault();
+                console.log(this.value);
+                titleValue = campResults[this.value].parkName;
+
+                $.get("/api/user_data").then(function (data) {
+                    currentUser = data.id;
+
+                    var newTrip = {
+                        title: titleValue,
+                        userTrip: titleValue + " - " + currentUser,
+                        UserId: currentUser
+                    };
+
+                    $.post("/api/trips", newTrip, function () {
+                        alert("Adding campsite!")
+                    })
+                })
             })
         })
     };
