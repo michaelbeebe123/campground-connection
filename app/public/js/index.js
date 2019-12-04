@@ -95,58 +95,43 @@ $(document).ready(function () {
                             <p class="card-text" id="directions-overview">${campResults[i].directionsOverview}</p>
                             <hr>
                             <button class="btn btn-success" id ="directions-url" href="${campResults[i].directionsURL}">Map</button>
-                            <button class="view-campgrounds btn btn-success" value=${i}><a href="/campground">See More</a></button<a>
+                            <button class="view-campgrounds btn btn-success modal-button" data-toggle="modal" data-target="#campgroundModal" value=${i}>See More</button>
                         </div>
                 </div>`
 
                 $("#resultcards").append(parkCards);
             }
 
-            var campDetails =
-                `<div class="modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title">${newCampObject.parkName}</h5>
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body">
-                    <ul>
-                    <li>Description: ${newCampObject.description}</li>
-                    <li>URL: ${newCampObject.url}</li>
-                    <li>Weather Overview: ${newCampObject.weatherOverview}</li>
-                    <li>Directions Overview: ${newCampObject.directionsOverview}</li>
-                    <h5>Amenities</h5>
-                        <ul>
-                            <li>Dump Station: ${newCampObject.dumpStation}</li>
-                            <li>Cell-Phone Reception: ${newCampObject.cellPhone}</li>
-                            <li>Toilets: ${newCampObject.toilets}</li>
-                            <li>Showers: ${newCampObject.showers}</li>
-                            <li>Internet Connectivity: ${newCampObject.internet}</li>
-                            <li>Storage: ${newCampObject.storageLocker}</li>
-                            <li>Camp Store: ${newCampObject.campStore}</li>
-                            <li>Laundry: ${newCampObject.laundry}</li>
-                            <li>Fire Stove: ${newCampObject.fireStove}</li>
-                        </ul>
-                    <h5>Regulations</h5>
-                        <ul>
-                            <li>Overview: ${newCampObject.regulationsOverview}</li>
-                            <li>URL: ${newCampObject.regulationsURL}</li>
-                        </ul>
-                    </ul>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
-                    <button type="button" class="btn btn-primary">Add</button>
-                    </div>
-                </div>
-                </div>
-            </div>`
+            $(".modal-button").on("click", function () {
+                $("#exampleModalScrollableTitle").text(campResults[this.value].parkName);
+                $("#description").text(campResults[this.value].description);
 
-            $("#campDetails").append(campDetails);
+                if (campResults[this.value].url) {
+                    $("#url").text(campResults[this.value].url);
+                } else {
+                    $("#url").text("N/A");
+                }
 
+                $("#weather").text(campResults[this.value].weatherOverview);
+                $("#directions").text(campResults[this.value].directionsOverview);
+                $("#dumpStation").text(campResults[this.value].dumpStation);
+                $("#cellPhone").text(campResults[this.value].cellPhone);
+                $("#toilets").text(campResults[this.value].toilets);
+                $("#showers").text(campResults[this.value].showers);
+                $("#internet").text(campResults[this.value].internet);
+                $("#storageLocker").text(campResults[this.value].storageLocker);
+                $("#campStore").text(campResults[this.value].campStore);
+                $("#laundry").text(campResults[this.value].laundry);
+                $("#fireStove").text(campResults[this.value].fireStove);
+
+                if (campResults[this.value].regulationsOverview) {
+                    $("#regulationsOverview").text(campResults[this.value].regulationsOverview);
+                } else {
+                    $("#regulationsOverview").text("N/A");
+                }
+
+                $("#regulationsURL").html("<a href='" + campResults[this.value].regulationsURL + "'>See regulations</a>");
+            })
         })
-
     };
 })
