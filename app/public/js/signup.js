@@ -15,7 +15,6 @@ $(document).ready(function () {
       fname: fnameInput.val().trim(),
       lname: lnameInput.val().trim()
     };
-    console.log(userData);
 
     // if (!userData.email || !userData.password) {
     if (!userData.email || !userData.password || !userData.fname || !userData.lname) {
