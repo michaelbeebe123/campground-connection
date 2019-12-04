@@ -76,7 +76,7 @@ $(document).ready(function () {
                     storageLocker: response.data[i].amenities.foodstoragelockers,
                     campStore: response.data[i].amenities.campstore,
                     laundry: response.data[i].amenities.laundry,
-                    fireStove: respoinse.data[i].accessability.firestovepolicy,
+                    fireStove: response.data[i].accessability.firestovepolicy,
 
                 };
 
