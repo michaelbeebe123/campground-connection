@@ -5,6 +5,9 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             // unique: true
         },
+        regUrl: {
+            type: DataTypes.STRING,
+        },
         userTrip: {
             type: DataTypes.STRING,
             allowNull: false,

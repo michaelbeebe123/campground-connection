@@ -23,8 +23,6 @@ $(document).ready(function () {
         campResults = [];
         state = $("#inputState").val();
         limit = $("#limitNumber").val();
-        console.log(state);
-        console.log(limit);
 
         // create loading gif and push onto page
         var loader = $("<div>");
@@ -41,7 +39,6 @@ $(document).ready(function () {
     // $(document).ajaxStart(function () {
     $("#submitBtn").on("click", function () {
         // Show image container
-        console.log("loader")
         $("#resultcards").hide();
         $("#loader").show();
         setTimeout(function () {
@@ -55,13 +52,11 @@ $(document).ready(function () {
     function getCamp() {
 
         var queryURLCamp = "https://developer.nps.gov/api/v1/campgrounds?stateCode=" + state + "&limit=" + limit + "&api_key=" + parkAPIKey;
-        console.log(queryURLCamp);
 
         $.ajax({
             url: queryURLCamp,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
 
             for (var i = 0; i < response.data.length; i++) {
 
@@ -142,19 +137,24 @@ $(document).ready(function () {
                     $("#regulationsOverview").text("N/A");
                 }
 
-                $("#regulationsURL").html("<a href='" + campResults[this.value].regulationsURL + "'>See regulations</a>");
+                if (campResults[this.value].regulationsURL) {
+                    $("#regulationsURL").html("<a href='" + campResults[this.value].regulationsURL + "'>See regulations</a>");
+                } else {
+                    $("#regulationsURL").text("N/A");
+                }
             })
 
             $(".save-campground").on("click", function (event) {
                 event.preventDefault();
-                console.log(this.value);
                 titleValue = campResults[this.value].parkName;
+                regUrlValue = campResults[this.value].regulationsURL;
 
                 $.get("/api/user_data").then(function (data) {
                     currentUser = data.id;
 
                     var newTrip = {
                         title: titleValue,
+                        regUrl: regUrlValue,
                         userTrip: titleValue + " - " + currentUser,
                         UserId: currentUser
                     };
