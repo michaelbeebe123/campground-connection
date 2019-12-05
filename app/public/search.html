@@ -35,26 +35,30 @@
     <p class=log>
       <form class="form-inline">
         <form class="form-inline">
-          <button><a href="/logout">Log Out</a></button>
-          <button><a href="/trips">My Campgrounds</a></button>
+          <button><a href="/logout"></a>Log Out</button>
+          <button><a href="/trips"></a>My Campgrounds</button>
         </form>
     </p>
   </div>
 
-  <!--Search Park-->
-  <!--Requirements(park or campground, state)-->
-  <!--View Your Trips list of trip names if logged in-->
-  <div id="main-container" class="container">
+  <div id="infodisplay" class="container">
     <!--row with search and trip-->
-    <div class="row text-center" id="infodisplay">
-      <div class="col-12 infocol" id="largecol">
-        <h1>Search the National Parks</h1>
+    <div class="text-center">
+      <div class="col-12">
         <br>
-        <h5>Welcome back <span id="user-name"></span></h5>
+        <h1>National Parks Campground Search</h1>
+        <hr>
+        <h4>Welcome back <span id="user-name"></span></h4>
+        <br>
+      </div>
+
+
+
+      <div class="col-sm">
         <form>
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Select State</label>
-            <select class="form-group col-md-2" id="inputState">
+            <label for="inputState">Select State</label>
+            <select class="form-control-sm col-md-1" id="inputState">
               <option>AL</option>
               <option>AK</option>
               <option>AZ</option>
@@ -106,27 +110,29 @@
               <option>WI</option>
               <option>WY</option>
             </select>
-            <select class="form-group col-md-2" id="limitNumber">
+
+            <label for="limitNumber">Results</label>
+            <select class="form-control-sm col-md-1" id="limitNumber">
               <option>5</option>
               <option>10</option>
               <option>15</option>
             </select>
-            <button type="submit" class="btn btn-success" id="submitBtn">
-              Submit
-            </button>
+
           </div>
+        </form>
+        <button type="submit" class="btn btn-success" id="submitBtn">
+          Submit
+        </button>
       </div>
-      </form>
-    </div>
 
-    <div class="row text-center">
-      <div class="col-12" id="parksloader"></div>
+      <div class="row text-center">
+        <div class="col-12" id="parksloader"></div>
+      </div>
     </div>
-    <div class="row" id="resultcards">
-      <!--Card displays of search results (park name, price range, rating, photo)-->
-    </div>
+  </div>
 
-
+  <div class="row" id="resultcards">
+    <!--Card displays of search results (park name, price range, rating, photo)-->
   </div>
 
   <div class="modal" id="campgroundModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
