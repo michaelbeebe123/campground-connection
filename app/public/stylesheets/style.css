@@ -58,6 +58,21 @@ h1 button{
   background-color:transparent;
 }
 
+.form-control:focus{
+  border-color: #00551C;
+  box-shadow: 0px 1px 1px rgba(0, 85, 28, 0.075) inset, 0px 0px 8px rgba(0, 85, 28, 0.5);
+}
+
+option:focus{
+  border-color: #00551C;
+  box-shadow: 0px 1px 1px rgba(0, 85, 28, 0.075) inset, 0px 0px 8px rgba(0, 85, 28, 0.5);
+}
+.campground:hover
+
+select option:hover {
+  background:#00551C;
+ 
+}
 
 h1 button a:hover{
   text-decoration:none;
@@ -68,6 +83,14 @@ h1 button a:hover{
   background:#00551C;
   width:125px;
 }
+#signup{
+  background:#00551C;
+  width:125px;
+}
+#signupcontainer{
+  margin:auto;
+}
+
 #loginContainer{
   margin:auto;
 }
