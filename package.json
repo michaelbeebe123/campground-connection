@@ -1,23 +1,31 @@
 {
-  "name": "projectapp",
+  "name": "campground-connection",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "mysql": "^2.17.1"
-  },
-  "devDependencies": {},
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/michaelbeebe123/projectapp.git"
+    "url": "git+https://github.com/michaelbeebe123/campground-connection.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/michaelbeebe123/projectapp/issues"
+    "url": "https://github.com/michaelbeebe123/campground-connection/issues"
   },
-  "homepage": "https://github.com/michaelbeebe123/projectapp#readme"
+  "homepage": "https://github.com/michaelbeebe123/campground-connection#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express-session": "^1.17.0",
+    "fs": "0.0.1-security",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.0.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sequelize": "^5.21.2"
+  }
 }
