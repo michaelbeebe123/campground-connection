@@ -2,11 +2,15 @@ $(document).ready(function () {
     $("#trips").empty();
     $("#no-trips").empty();
 
+    $(document).on("click", "button.delete", deleteCamp);
+
     $.get("/api/user_data").then(function (data) {
         userName = data.fname;
         userName = userName.charAt(0).toUpperCase() + userName.slice(1);
         $("#user-name").text(userName);
     });
+
+    initializePage();
 
     function makeCards(cardTitle, Url, timestamp, number) {
         var userCards =
@@ -17,33 +21,48 @@ $(document).ready(function () {
                     <p class="card-text" ><a href='${Url}'>See Regulations</a></p>
                     <p class="card-text">Saved on: ${timestamp}</p>
                     <hr>
-                    <button class="btn btn-success delete-campground" value=${number}>Delete Campground</button>
+                    <button class="btn btn-danger delete" value=${number}>Delete Campground</button>
                 </div>
             </div>`
 
         $("#trips").append(userCards);
+
     }
 
-    $.get("/api/user_data").then(function (data) {
-        var currentUser = data.id;
+    function initializePage() {
+        $("#trips").empty();
+        $("#no-trips").empty();
 
-        $.get("/api/trips/" + currentUser, function (data) {
-            if (data[0]) {
-                for (var i = 0; i < data.length; i++) {
-                    var title = data[i].title;
-                    var createdAt = data[i].createdAt;
+        $.get("/api/user_data").then(function (data) {
+            var currentUser = data.id;
 
-                    if (data[i].regUrl) {
-                        var regUrl = data[i].regUrl;
+            $.get("/api/trips/" + currentUser, function (data) {
+                if (data[0]) {
+                    for (var i = 0; i < data.length; i++) {
+                        var title = data[i].title;
+                        var createdAt = data[i].createdAt;
+                        var id = data[i].id;
+
+                        if (data[i].regUrl) {
+                            var regUrl = data[i].regUrl;
+                        }
+
+                        makeCards(title, regUrl, createdAt, id);
                     }
-
-                    makeCards(title, regUrl, createdAt, i);
+                } else {
+                    $("#no-trips").text("You don't have any saved trips");
                 }
-            } else {
-                $("#no-trips").text("You don't have any saved trips");
-            }
-
+            })
         })
-    })
+    }
 
+    function deleteCamp(event) {
+        // event.stopPropagation();
+        // var id = $(this).data("id");
+        var id = this.value
+        $.ajax({
+            method: "DELETE",
+            url: "/api/trips/" + id
+        }).then(initializePage);
+    }
 });
