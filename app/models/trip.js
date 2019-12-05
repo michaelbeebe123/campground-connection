@@ -3,6 +3,14 @@ module.exports = function (sequelize, DataTypes) {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
+            // unique: true
+        },
+        regUrl: {
+            type: DataTypes.STRING,
+        },
+        userTrip: {
+            type: DataTypes.STRING,
+            allowNull: false,
             unique: true
         }
     });

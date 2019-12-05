@@ -36,6 +36,7 @@
       <form class="form-inline">
         <form class="form-inline">
           <button><a href="/logout">Log Out</a></button>
+          <button><a href="/trips">My Campgrounds</a></button>
         </form>
     </p>
   </div>
@@ -43,11 +44,13 @@
   <!--Search Park-->
   <!--Requirements(park or campground, state)-->
   <!--View Your Trips list of trip names if logged in-->
-  <div class="container">
+  <div id="main-container" class="container">
     <!--row with search and trip-->
     <div class="row text-center" id="infodisplay">
       <div class="col-12 infocol" id="largecol">
         <h1>Search the National Parks</h1>
+        <br>
+        <h5>Welcome back <span id="user-name"></span></h5>
         <form>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Select State</label>
@@ -114,8 +117,6 @@
           </div>
       </div>
       </form>
-
-
     </div>
 
     <div class="row text-center">
@@ -128,15 +129,65 @@
 
   </div>
 
-
-
-
-
-
-
-
-
-
+  <div class="modal" id="campgroundModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalScrollableTitle">Modal title</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4>About</h4>
+          <br>
+          <ul>
+            <li><strong>Description:</strong> <span id="description"></span></li>
+            <br>
+            <li><strong>URL:</strong> <span id="url"></span></li>
+            <br>
+            <li><strong>Weather Overview:</strong> <span id="weather"></span></li>
+            <br>
+            <li><strong>Directions Overview:</strong> <span id="directions"></span></li>
+          </ul>
+          <hr>
+          <h4>Amenities</h4>
+          <br>
+          <ul>
+            <li><strong>Dump Station:</strong> <span id="dumpStation"></span></li>
+            <br>
+            <li><strong>Cell Phone Reception:</strong> <span id="cellPhone"></span></li>
+            <br>
+            <li><strong>Toilets:</strong> <span id="toilets"></span></li>
+            <br>
+            <li><strong>Showers:</strong> <span id="showers"></span></li>
+            <br>
+            <li><strong>Internet Connectivity:</strong> <span id="internet"></span></li>
+            <br>
+            <li><strong>Storage:</strong> <span id="storageLocker"></span></li>
+            <br>
+            <li><strong>Camp Store:</strong> <span id="campStore"></span></li>
+            <br>
+            <li><strong>Laundry:</strong> <span id="laundry"></span></li>
+            <br>
+            <li><strong>Fire Stove:</strong> <span id="fireStove"></span></li>
+          </ul>
+          <hr>
+          <h4>Regulations</h4>
+          <br>
+          <ul>
+            <li><strong>Overview:</strong> <span id="regulationsOverview"></span></li>
+            <br>
+            <li><strong>URL:</strong> <span id="regulationsURL"></span></li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
