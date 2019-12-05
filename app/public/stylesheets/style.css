@@ -17,12 +17,14 @@ a{color:#00551C;
   color: #00551C;
   border-radius: 3px;
   margin: auto;
+  padding-bottom: 10px;
   margin-bottom: 20px;
   /* margin:15px; */
   /* padding: 10px; */
 }
 #submitBtn{
   background:#00551C;
+  width:125px;
 }
 #parksloader{
   padding-bottom: 10px;
@@ -34,13 +36,6 @@ a{color:#00551C;
   width:75%;
 }
 
-#saveCampground{
-  background:#00551C;
-}
-
-#seeMore {
-  background:#00551C;
-}
 #jumbo{
     background-image: url(../images/mountain-pic.png);
     background-repeat: no-repeat;
@@ -69,6 +64,13 @@ h1 button a:hover{
   color:#00551C;
 }
 
+#login{
+  background:#00551C;
+  width:125px;
+}
+#loginContainer{
+  margin:auto;
+}
 .logout:hover{
   background:darkgrey;
 }
