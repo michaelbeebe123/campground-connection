@@ -66,4 +66,14 @@ module.exports = function (app) {
       res.json(dbPost);
     });
   });
+
+  app.delete("/api/trips/:id", function (req, res) {
+    db.Trip.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbTrip) {
+      res.json(dbTrip);
+    });
+  });
 };
