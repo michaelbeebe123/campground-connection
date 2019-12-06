@@ -106,13 +106,15 @@ h1 button a:hover{
 }
 #logout {
   background:#00551C;
-  margin:10px;
+  color:white;
+  margin-right: 10px;
   border:#00551C;
 }
 
 #campground{
   background:#00551C;
   border:#00551C;
+  color:white;
 }
 
 /* #parksloader{
