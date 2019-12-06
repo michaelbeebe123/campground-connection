@@ -134,3 +134,12 @@ h1 button a:hover{
 /*members*/
 /*signup*/
 /*login*/
+
+.card {
+  width: 75%;
+  margin: auto;
+}
+
+#user-name {
+  margin-bottom: 30px;
+}
