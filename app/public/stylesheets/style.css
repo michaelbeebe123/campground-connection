@@ -13,7 +13,7 @@ a{color:#00551C;
   text-decoration: none}
 
 #infodisplay{
-  background:#D8D8D8;
+  background:#ff8533;
   color: #00551C;
   border-radius: 3px;
   margin: auto;
@@ -24,6 +24,7 @@ a{color:#00551C;
 }
 #submitBtn{
   background:#00551C;
+  border:#00551C;
   width:125px;
 }
 #parksloader{
@@ -37,7 +38,7 @@ a{color:#00551C;
 }
 
 #jumbo{
-    background-image: url(../images/mountain-pic.png);
+    background-image: url(../images/camping-checklist.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display:flex;
@@ -81,10 +82,12 @@ h1 button a:hover{
 
 #login{
   background:#00551C;
+  border:#00551C;
   width:125px;
 }
 #signup{
   background:#00551C;
+  border:#00551C;
   width:125px;
 }
 
@@ -101,12 +104,15 @@ h1 button a:hover{
 #loginContainer{
   margin:auto;
 }
-#logout:hover{
-  background:#B8B8B8;
+#logout {
+  background:#00551C;
+  margin:10px;
+  border:#00551C;
 }
 
-#campground:hover{
-  background:#B8B8B8;
+#campground{
+  background:#00551C;
+  border:#00551C;
 }
 
 /* #parksloader{
