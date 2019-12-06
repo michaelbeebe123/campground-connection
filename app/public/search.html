@@ -11,6 +11,7 @@
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
   <link href=“https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap” rel=“stylesheet”>
   <link rel="stylesheet" href="stylesheets/style.css" />
 
@@ -26,18 +27,17 @@
 <body>
   <div class="jumbotron" id="jumbo">
     <h1 id="titleHeader" class="display-4">
-      <button id="logo">
-        <a href="/search"><img src="./images/campconnectlogotrans.png" width="300px"></img></a>
-
+      <a href="/search"><button id="logo">
+          <img src="./images/campconnectlogotrans.png" width="300px"></img>
+        </button></a>
 
     </h1>
     <hr class="my-4" />
     <p class=log>
-      <form class="form-inline">
-        <form class="form-inline">
-          <button id="logout" class="btn btn-success"><a href="/logout"></a>Log Out</button>
-          <button id="campground" class="btn btn-success"><a href="/trips"></a>My Campgrounds</button>
-        </form>
+      <a href="/logout"><button id="logout">Log Out</button></a>
+      <a href="/trips"><button id="campground">My Campgrounds</button></a>
+      <!-- <button id="campground"><a href="/trips"></a>My Campgrounds</button> -->
+
     </p>
   </div>
 
@@ -110,7 +110,7 @@
               <option>WI</option>
               <option>WY</option>
             </select>
-     
+
             <label for="limitNumber">Results</label>
             <select class="form-control-sm col-md-1" id="limitNumber">
               <option>5</option>
