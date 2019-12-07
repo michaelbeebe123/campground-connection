@@ -140,3 +140,7 @@ h1 button a:hover{
 h5 {
   margin-bottom: -35px;
 }
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.582);
+}
