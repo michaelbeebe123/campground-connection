@@ -34,8 +34,11 @@
     </h1>
     <hr class="my-4" />
     <p class=log>
-      <a href="/logout"><button class= "btn btn-sucess" id="logout">Log Out</button></a>
-      <a href="/trips"><button class= "btn btn-sucess" id="campground">My Campgrounds</button></a>
+
+      <a href="/logout"><button class="btn btn-sucess" id="logout">Log Out</button></a>
+      <a href="/trips"><button class="btn btn-sucess" id="campground">My Campgrounds</button></a>
+      <!-- <button id="campground"><a href="/trips"></a>My Campgrounds</button> -->
+
     </p>
   </div>
 
@@ -46,7 +49,7 @@
         <br>
         <h1>National Parks Campground Search</h1>
         <hr>
-        <h4>Welcome back <span id="user-name"></span></h4>
+        <h4 id="user-name"></h4>
         <br>
       </div>
 
@@ -121,6 +124,9 @@
         <button type="submit" class="btn btn-success" id="submitBtn">
           Submit
         </button>
+        <span id="breaks"></span>
+        <h3 id="no-results"></h3>
+        <h5 id="no-results2"></h5>
       </div>
 
       <div class="row text-center">
@@ -187,7 +193,7 @@
           </ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="campground" type="button" class="btn btn-success" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

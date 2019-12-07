@@ -7,26 +7,42 @@ $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
         userName = data.fname;
         userName = userName.charAt(0).toUpperCase() + userName.slice(1);
-        $("#user-name").text(userName);
+        $("#user-name").text(userName + "'s Campgrounds");
     });
 
     initializePage();
 
-    function makeCards(cardTitle, Url, timestamp, number) {
-        var userCards =
-            `<div class="card mb-3">
+    function makeCards(cardTitle, Url, dateStamp, timestamp, number) {
+        if (Url === "") {
+            var userCards =
+                `<div class="card mb-3">
                 <div class="card-body">
                     <h3 class="card-title" >${cardTitle}</h3>
                     <hr>
-                    <p class="card-text" ><a href='${Url}'>See Regulations</a></p>
-                    <p class="card-text">Saved on: ${timestamp}</p>
+                    <p class="card-text">Saved on ${dateStamp}</p>
+                    <p class="card-text">at ${timestamp}</p>
                     <hr>
                     <button class="btn btn-danger delete" value=${number}>Delete Campground</button>
                 </div>
             </div>`
 
-        $("#trips").append(userCards);
+            $("#trips").append(userCards);
+        } else {
+            var userCards =
+                `<div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title" >${cardTitle}</h3>
+                    <hr>
+                    <p class="card-text" ><a href='${Url}'>See Regulations</a></p>
+                    <p class="card-text">Saved on ${dateStamp}</p>
+                    <p class="card-text">at ${timestamp}</p>
+                    <hr>
+                    <button class="btn btn-danger delete" value=${number}>Delete Campground</button>
+                </div>
+            </div>`
 
+            $("#trips").append(userCards);
+        }
     }
 
     function initializePage() {
@@ -40,14 +56,17 @@ $(document).ready(function () {
                 if (data[0]) {
                     for (var i = 0; i < data.length; i++) {
                         var title = data[i].title;
-                        var createdAt = data[i].createdAt;
+                        var dateStamp = data[i].date;
+                        var timestamp = data[i].time;
                         var id = data[i].id;
 
                         if (data[i].regUrl) {
                             var regUrl = data[i].regUrl;
+                        } else {
+                            var regUrl = "";
                         }
 
-                        makeCards(title, regUrl, createdAt, id);
+                        makeCards(title, regUrl, dateStamp, timestamp, id);
                     }
                 } else {
                     $("#no-trips").text("You don't have any saved trips");

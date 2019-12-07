@@ -14,7 +14,7 @@ $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
         userName = data.fname;
         userName = userName.charAt(0).toUpperCase() + userName.slice(1);
-        $("#user-name").text(userName);
+        $("#user-name").text("Welcome back " + userName);
     });
 
     $("#submitBtn").on("click", function () {
@@ -39,11 +39,16 @@ $(document).ready(function () {
     // $(document).ajaxStart(function () {
     $("#submitBtn").on("click", function () {
         // Show image container
+        $("#breaks").empty();
+        $("#breaks").html("<br><br>");
         $("#resultcards").hide();
+        $("#no-results").empty();
+        $("#no-results2").empty();
         $("#loader").show();
         setTimeout(function () {
             $("#loader").hide();
             $("#resultcards").show();
+            $("#breaks").empty();
         }, 3000);
     });
 
@@ -57,6 +62,14 @@ $(document).ready(function () {
             url: queryURLCamp,
             method: "GET"
         }).then(function (response) {
+
+            if (response.total == 0) {
+                setTimeout(function () {
+                    $("#breaks").html("<br><br>")
+                    $("#no-results").text("We're not showing any campgrounds");
+                    $("#no-results2").text("Please try a different state");
+                }, 3100);
+            }
 
             for (var i = 0; i < response.data.length; i++) {
 
@@ -95,8 +108,8 @@ $(document).ready(function () {
                             <h5 class="card-title">Directions</h5>
                             <p class="card-text" id="directions-overview">${campResults[i].directionsOverview}</p>
                             <hr>
-                            <button class="btn btn-success save-campground" value=${i}>Save Campground</button>
-                            <button class="view-campgrounds btn btn-success modal-button" data-toggle="modal" data-target="#campgroundModal" value=${i}>See More</button>
+                            <button id="campground" class="btn btn-success save-campground" value=${i}>Save Campground</button>
+                            <button id="campground" class="view-campgrounds btn btn-success modal-button" data-toggle="modal" data-target="#campgroundModal" value=${i}>See More</button>
                         </div>
                 </div>`
 
@@ -146,6 +159,31 @@ $(document).ready(function () {
 
             $(".save-campground").on("click", function (event) {
                 event.preventDefault();
+                var today = new Date();
+                var hour = today.getHours();
+                var minutes = today.getMinutes();
+                // var minutes = 59;
+                var amOrPm = "";
+
+                if (hour === 0) {
+                    hour = 12;
+                    amOrPm = "am";
+                } else if (hour === 12) {
+                    amOrPm = "pm";
+                } else if (hour > 12) {
+                    hour = hour - 12;
+                    amOrPm = "pm";
+                } else if (hour < 12) {
+                    amOrPm = "am";
+                }
+
+                if (minutes < 10) {
+                    minutes = "0" + String(minutes);
+                }
+
+                var date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+                var time = hour + ":" + minutes + " " + amOrPm;
+                console.log(time);
                 titleValue = campResults[this.value].parkName;
                 regUrlValue = campResults[this.value].regulationsURL;
 
@@ -154,13 +192,15 @@ $(document).ready(function () {
 
                     var newTrip = {
                         title: titleValue,
+                        date: date,
+                        time: time,
                         regUrl: regUrlValue,
                         userTrip: titleValue + " - " + currentUser,
                         UserId: currentUser
                     };
 
                     $.post("/api/trips", newTrip, function () {
-                        alert("Adding campsite!")
+                        alert("Campground added!")
                     })
                 })
             })

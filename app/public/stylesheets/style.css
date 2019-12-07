@@ -137,11 +137,10 @@ h1 button a:hover{
 /*signup*/
 /*login*/
 
-.card {
-  width: 75%;
-  margin: auto;
+h5 {
+  margin-bottom: -35px;
 }
 
-#user-name {
-  margin-bottom: 30px;
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.582);
 }
