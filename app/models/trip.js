@@ -5,6 +5,12 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             // unique: true
         },
+        date: {
+            type: DataTypes.STRING
+        },
+        time: {
+            type: DataTypes.STRING
+        },
         regUrl: {
             type: DataTypes.STRING,
         },
