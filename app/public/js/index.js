@@ -200,7 +200,7 @@ $(document).ready(function () {
                     };
 
                     $.post("/api/trips", newTrip, function () {
-                        alert("Adding campsite!")
+                        alert("Campground added!")
                     })
                 })
             })
