@@ -39,11 +39,16 @@ $(document).ready(function () {
     // $(document).ajaxStart(function () {
     $("#submitBtn").on("click", function () {
         // Show image container
+        $("#breaks").empty();
+        $("#breaks").html("<br><br>");
         $("#resultcards").hide();
+        $("#no-results").empty();
+        $("#no-results2").empty();
         $("#loader").show();
         setTimeout(function () {
             $("#loader").hide();
             $("#resultcards").show();
+            $("#breaks").empty();
         }, 3000);
     });
 
@@ -57,6 +62,14 @@ $(document).ready(function () {
             url: queryURLCamp,
             method: "GET"
         }).then(function (response) {
+
+            if (response.total == 0) {
+                setTimeout(function () {
+                    $("#breaks").html("<br><br>")
+                    $("#no-results").text("We're not showing any campgrounds");
+                    $("#no-results2").text("Please try a different state");
+                }, 3100);
+            }
 
             for (var i = 0; i < response.data.length; i++) {
 
@@ -95,8 +108,8 @@ $(document).ready(function () {
                             <h5 class="card-title">Directions</h5>
                             <p class="card-text" id="directions-overview">${campResults[i].directionsOverview}</p>
                             <hr>
-                            <button class="btn btn-success save-campground" value=${i}>Save Campground</button>
-                            <button class="view-campgrounds btn btn-success modal-button" data-toggle="modal" data-target="#campgroundModal" value=${i}>See More</button>
+                            <button id="campground" class="btn btn-success save-campground" value=${i}>Save Campground</button>
+                            <button id="campground" class="view-campgrounds btn btn-success modal-button" data-toggle="modal" data-target="#campgroundModal" value=${i}>See More</button>
                         </div>
                 </div>`
 

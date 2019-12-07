@@ -13,6 +13,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link href=“https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap” rel=“stylesheet”>
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/trips.css" />
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -32,8 +33,8 @@
         </h1>
         <hr class="my-4" />
         <p class=log>
-            <a href="/logout"><button class= "btn btn-sucess" id="logout">Log Out</button></a>
-            <a href="/trips"><button class= "btn btn-sucess" id="campground">My Campgrounds</button></a>
+            <a href="/logout"><button class="btn btn-sucess" id="logout">Log Out</button></a>
+            <a href="/search"><button class="btn btn-sucess" id="campground">Home</button></a>
         </p>
     </div>
 
@@ -46,11 +47,11 @@
         <div class="row text-center" id="infodisplay">
             <div class="col-12 infocol">
                 <h1><span id="user-name"></span>'s Campgrounds</h1>
-                <br>
+                <hr>
             </div>
             <hr>
             <div class="col-12 text-center" id="trips"></div>
-            <h3 class="text-center" id="no-trips"></h3>
+            <h3 id="no-trips"></h3>
             <!--Repeat Above-->
             <!--possibly a trip map?-->
             <!--Possibly a supply list?-->
