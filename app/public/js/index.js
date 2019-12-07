@@ -159,6 +159,31 @@ $(document).ready(function () {
 
             $(".save-campground").on("click", function (event) {
                 event.preventDefault();
+                var today = new Date();
+                var hour = today.getHours();
+                var minutes = today.getMinutes();
+                // var minutes = 59;
+                var amOrPm = "";
+
+                if (hour === 0) {
+                    hour = 12;
+                    amOrPm = "am";
+                } else if (hour === 12) {
+                    amOrPm = "pm";
+                } else if (hour > 12) {
+                    hour = hour - 12;
+                    amOrPm = "pm";
+                } else if (hour < 12) {
+                    amOrPm = "am";
+                }
+
+                if (minutes < 10) {
+                    minutes = "0" + String(minutes);
+                }
+
+                var date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+                var time = hour + ":" + minutes + " " + amOrPm;
+                console.log(time);
                 titleValue = campResults[this.value].parkName;
                 regUrlValue = campResults[this.value].regulationsURL;
 
@@ -167,6 +192,8 @@ $(document).ready(function () {
 
                     var newTrip = {
                         title: titleValue,
+                        date: date,
+                        time: time,
                         regUrl: regUrlValue,
                         userTrip: titleValue + " - " + currentUser,
                         UserId: currentUser
