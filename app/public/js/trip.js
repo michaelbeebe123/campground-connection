@@ -7,7 +7,7 @@ $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
         userName = data.fname;
         userName = userName.charAt(0).toUpperCase() + userName.slice(1);
-        $("#user-name").text(userName);
+        $("#user-name").text(userName + "'s Campgrounds");
     });
 
     initializePage();

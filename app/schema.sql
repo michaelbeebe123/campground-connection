@@ -1,3 +1,0 @@
-DROP DATABASE IF EXISTS user_test;
-
-CREATE DATABASE user_test;
